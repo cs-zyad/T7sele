@@ -4,172 +4,214 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>تحصيلي — الاشتراك</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script src="https://unpkg.com/lucide@latest"></script>
 <style>
-  .paywall-screen {
-    background: #000;
-    color: #fff;
+  :root {
+    --g:#00C896; --gd:#009E77; --gl:#E6FAF5;
+    --ink:#0D1F1A; --inkm:#3D5A52; --inkl:#8FA89F;
+    --white:#FFFFFF; --bg:#F7FAF9; --border:#E0EBE6;
+  }
+
+  .paywall-container {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 32px;
+    background: var(--ink);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
-  .paywall-bg {
+
+  .sub-bg {
     position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 300px;
-    height: 300px;
-    background: var(--g);
-    filter: blur(120px);
-    opacity: 0.3;
-    z-index: 0;
+    inset: 0;
+    background-image: radial-gradient(rgba(0,200,150,0.05) 1px,transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
   }
-  .paywall-content {
+
+  .sub-glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle,rgba(0,200,150,0.08),transparent 65%);
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .sub-scroll {
+    padding: 28px 24px 24px;
     position: relative;
     z-index: 1;
     flex: 1;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
   }
-  .paywall-icon {
-    font-size: 4rem;
-    margin-bottom: 24px;
-    animation: float 3s ease-in-out infinite;
+
+  .sub-icon { font-size: 2.5rem; margin-bottom: 18px; text-align: center; }
+  .sub-title { font-size: 1.95rem; font-weight: 900; color: white; line-height: 1.2; text-align: center; margin-bottom: 8px; }
+  .sub-desc { font-size: 0.85rem; color: rgba(255,255,255,0.4); text-align: center; line-height: 1.7; margin-bottom: 24px; }
+
+  .trial-badge {
+    background: rgba(0,200,150,0.08);
+    border-radius: 18px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(0,200,150,0.2);
+    width: 100%;
   }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+  .trial-pill { background: var(--g); color: var(--ink); font-size: 0.7rem; font-weight: 900; padding: 5px 12px; border-radius: 10px; }
+  .trial-title { font-size: 0.95rem; font-weight: 800; color: white; margin-bottom: 2px; }
+  .trial-sub { font-size: 0.7rem; color: rgba(255,255,255,0.35); }
+
+  .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; width: 100%; }
+
+  .plan-card {
+    background: rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 20px 18px;
+    border: 2.5px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+    text-align: right;
   }
-  .paywall-title {
-    font-size: 2.2rem;
+
+  .plan-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.1); }
+  .plan-card.sel { border-color: var(--g); background: rgba(0,200,150,0.08); }
+  .plan-card.popular { grid-column: 1/-1; }
+
+  .plan-popular-badge {
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    background: var(--g);
+    color: var(--ink);
+    font-size: 0.6rem;
     font-weight: 900;
-    line-height: 1.1;
+    padding: 4px 16px;
+    border-radius: 0 0 12px 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .plan-period { font-size: 0.75rem; color: rgba(255,255,255,0.4); font-weight: 600; margin-bottom: 8px; }
+  .plan-price { font-size: 1.8rem; font-weight: 900; color: white; line-height: 1; margin-bottom: 4px; }
+  .plan-price span { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 400; }
+  .plan-save { display: inline-block; background: rgba(0,200,150,0.15); color: var(--g); font-size: 0.65rem; font-weight: 800; padding: 4px 10px; border-radius: 8px; margin-top: 6px; }
+
+  .plan-check {
+    position: absolute;
+    top: 14px; left: 14px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--g);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem; color: var(--ink); font-weight: 900;
+  }
+  .plan-card.sel .plan-check { display: flex; }
+  .plan-card.sel .plan-price { color: var(--g); }
+
+  .sub-features { width: 100%; margin-bottom: 24px; text-align: right; }
+  .sub-feat { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-size: 0.85rem; color: rgba(255,255,255,0.6); font-weight: 500; }
+  .feat-check { width: 20px; height: 20px; border-radius: 50%; background: rgba(0,200,150,0.15); color: var(--g); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 900; flex-shrink: 0; }
+
+  .sub-cta {
+    width: 100%;
+    background: var(--g);
+    color: var(--ink);
+    border: none;
+    padding: 18px;
+    border-radius: 18px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,200,150,0.3);
+    transition: all 0.2s;
     margin-bottom: 12px;
   }
-  .paywall-sub {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 40px;
-  }
-  .trial-box {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 20px;
-    border-radius: 24px;
-    width: 100%;
-    margin-bottom: 24px;
-    text-align: right;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .trial-tag {
-    background: var(--g);
-    color: #000;
-    padding: 4px 12px;
-    border-radius: 10px;
-    font-size: 0.75rem;
-    font-weight: 800;
-  }
-  .plan-card {
-    background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-    border: 2px solid var(--g);
-    padding: 24px;
-    border-radius: 28px;
-    width: 100%;
-    margin-bottom: 40px;
-    text-align: right;
-    position: relative;
-  }
-  .plan-price {
-    font-size: 2.5rem;
-    font-weight: 900;
-    margin: 12px 0;
-  }
-  .btn-pay {
-    background: var(--g);
-    color: #000;
-    width: 100%;
-    padding: 20px;
-    border-radius: 20px;
-    font-size: 1.2rem;
-    font-weight: 800;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 16px;
-    box-shadow: 0 10px 30px rgba(0, 200, 150, 0.3);
-  }
-  .btn-skip {
-    color: rgba(255,255,255,0.4);
-    background: none;
-    border: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-  }
+  .sub-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(0,200,150,0.4); }
+  .sub-maybe { width: 100%; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.25); cursor: pointer; background: none; border: none; font-family: 'Cairo', sans-serif; padding: 10px; }
 </style>
 </head>
 <body>
 <div class="phone-frame">
   <div class="dynamic-island"></div>
   <div class="screen active">
-    <div class="paywall-screen">
-      <div class="paywall-bg"></div>
-      <div class="paywall-content">
-        <div class="paywall-icon"><i data-lucide="rocket" style="width:64px; height:64px; color:var(--g);"></i></div>
-        <div class="paywall-title">استعد للقمة مع النسخة الكاملة</div>
-        <div class="paywall-sub">افتح جميع المميزات والأسئلة وابدأ تدريبك بذكاء</div>
-        
-        <div class="trial-box">
-          <div>
-            <div style="font-weight:800; font-size:1.1rem;">فترة تجريبية مجانية</div>
-            <div style="font-size:0.8rem; opacity:0.6;">ابدأ الآن وادفع لاحقاً</div>
+    <div class="paywall-container">
+      <div class="sub-bg"></div>
+      <div class="sub-glow"></div>
+      
+      <div class="sub-scroll">
+        <div class="sub-icon">🚀</div>
+        <div class="sub-title">استعد للقمة مع<br>النسخة الكاملة</div>
+        <div class="sub-desc">افتح جميع المميزات وابدأ تدريبك بذكاء — خطة يومية تتكيف مع أدائك حتى يوم اختبارك</div>
+
+        <div class="trial-badge">
+          <div style="display:flex; align-items:center; gap:12px">
+            <div class="trial-pill">٧ أيام مجاناً</div>
+            <div>
+              <div class="trial-title">فترة تجريبية مجانية</div>
+              <div class="trial-sub">ابدأ الآن وادفع لاحقاً</div>
+            </div>
           </div>
-          <div class="trial-tag">٧ أيام مجاناً</div>
+          <div style="font-size:1.5rem">🎁</div>
         </div>
 
-        <div style="display:flex; gap:12px; width:100%; margin-bottom:32px;">
-          <div class="plan-card" style="flex:1; margin-bottom:0; border-color:rgba(255,255,255,0.1); background:rgba(255,255,255,0.05); padding:20px;" onclick="selectPlan(this)">
-            <div style="font-size:0.75rem; opacity:0.6;">الاشتراك الشهري</div>
-            <div style="font-size:1.5rem; font-weight:900; margin:8px 0;">٢٠ <span style="font-size:0.75rem; opacity:0.4;">ريال / شهر</span></div>
-            <div style="font-size:0.65rem; color:var(--g);">تجربة ٧ أيام</div>
+        <div class="plans-grid">
+          <div class="plan-card" onclick="selPlan(this,'monthly')" id="plan-monthly">
+            <div class="plan-check">✓</div>
+            <div class="plan-period">شهري</div>
+            <div class="plan-price">٢٠<span> ريال/شهر</span></div>
+            <div style="font-size:.65rem; color:rgba(255,255,255,0.28); margin-top:4px">تجربة ٧ أيام</div>
           </div>
-          
-          <div class="plan-card selected" style="flex:1; margin-bottom:0; padding:20px;" onclick="selectPlan(this)">
-            <div class="trial-tag" style="position:absolute; top:-10px; left:10px; font-size:0.6rem; padding:2px 8px;">الأكثر توفيراً</div>
-            <div style="font-size:0.75rem; opacity:0.6;">الاشتراك السنوي</div>
-            <div style="font-size:1.5rem; font-weight:900; margin:8px 0;">١٢٠ <span style="font-size:0.75rem; opacity:0.4;">ريال / سنة</span></div>
-            <div style="font-size:0.65rem; color:var(--g);">وفر ٥٠٪ الآن</div>
+          <div class="plan-card sel popular" onclick="selPlan(this,'yearly')" id="plan-yearly">
+            <div class="plan-popular-badge">الأكثر توفيراً ⭐</div>
+            <div class="plan-check">✓</div>
+            <div style="margin-top:12px">
+              <div class="plan-period">سنوي</div>
+              <div class="plan-price">٩٩<span> ريال/سنة</span></div>
+              <div class="plan-save">وفّر ١٤١ ريال — خصم ٥٩٪</div>
+            </div>
           </div>
         </div>
 
-        <button class="btn-pay" onclick="goTo('home')">ابدأ تجربتك المجانية</button>
-        <button class="btn-skip" onclick="goTo('home')">ربما لاحقاً</button>
+        <div class="sub-features">
+          <div class="sub-feat"><div class="feat-check">✓</div>خطة دراسية يومية تتكيف مع أدائك</div>
+          <div class="sub-feat"><div class="feat-check">✓</div>أسئلة غير محدودة مع شرح كل خطأ</div>
+          <div class="sub-feat"><div class="feat-check">✓</div>اختبارات تجريبية محاكية كاملة</div>
+          <div class="sub-feat"><div class="feat-check">✓</div>تقارير تفصيلية لنقاط قوتك وضعفك</div>
+          <div class="sub-feat"><div class="feat-check">✓</div>تنبيهات يومية مخصصة</div>
+        </div>
+
+        <button class="sub-cta" id="cta-btn" onclick="goTo('home')">ابدأ تجربتك المجانية ←</button>
+        <button class="sub-maybe" onclick="goTo('home')">ربما لاحقاً</button>
       </div>
     </div>
   </div>
 </div>
+
+<script src="app.js"></script>
 <script>
-  function selectPlan(el) {
-    document.querySelectorAll('.plan-card').forEach(c => {
-      c.classList.remove('selected');
-      c.style.borderColor = 'rgba(255,255,255,0.1)';
-      c.style.background = 'rgba(255,255,255,0.05)';
-    });
-    el.classList.add('selected');
-    el.style.borderColor = 'var(--g)';
-    el.style.background = 'linear-gradient(135deg, #1a1a1a, #0a0a0a)';
+  function selPlan(el, type) {
+    document.querySelectorAll('.plan-card').forEach(p => p.classList.remove('sel'));
+    el.classList.add('sel');
+    const btn = document.getElementById('cta-btn');
+    if(type === 'monthly') btn.textContent = 'ابدأ بـ ٢٠ ريال/شهر ←';
+    else btn.textContent = 'ابدأ بـ ٩٩ ريال/سنة ←';
   }
 </script>
-<script src="app.js"></script>
-<script>lucide.createIcons();</script>
 </body>
 </html>
