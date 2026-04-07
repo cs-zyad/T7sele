@@ -64,8 +64,8 @@ function checkSubscription() {
 var isSubscriber = checkSubscription();
 
 function updateProfileUI() {
-  var name   = localStorage.getItem('userName')   || '\u0623\u062d\u0645\u062f \u0627\u0644\u063a\u0627\u0645\u062f\u064a';
-  var avatar = localStorage.getItem('userAvatar') || '\u0623\u062d';
+  var name   = localStorage.getItem('userName')   || 'مستخدم جديد';
+  var avatar = localStorage.getItem('userAvatar') || 'م';
 
   var nameEl        = document.getElementById('home-name');
   var avatarEl      = document.getElementById('home-avatar');

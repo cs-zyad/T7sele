@@ -166,7 +166,7 @@
         </div>
       </div>
       <div class="ob-footer">
-        <button class="btn-next full" style="width:100%" onclick="nextStep('s2')">التالي ←</button>
+        <button class="btn-next full" style="width:100%; opacity: 0.5; pointer-events: none;" id="btn-next-s1" onclick="nextStep('s2')">التالي ←</button>
       </div>
     </div>
 
@@ -179,7 +179,7 @@
         <div class="ob-step-lbl">الخطوة ٢ من ٥</div>
         <div class="ob-title">ما تخصصك<br>الدراسي؟</div>
         
-        <div class="option sel" onclick="selOpt(this)">
+        <div class="option sel" onclick="selOpt(this, 'spec')">
           <div class="opt-icon">🔬</div>
           <div class="opt-info">
             <div class="opt-name">علمي</div>
@@ -214,7 +214,7 @@
         <div class="ob-step-lbl">الخطوة ٣ من ٥</div>
         <div class="ob-title">ما صفك<br>الدراسي؟</div>
 
-        <div class="option" onclick="selOpt(this)">
+        <div class="option" onclick="selOpt(this, 'grade')">
           <div class="opt-icon">🎓</div>
           <div class="opt-info">
             <div class="opt-name">الصف الثاني الثانوي</div>
@@ -223,7 +223,7 @@
           <div class="opt-radio"><div class="opt-radio-dot"></div></div>
         </div>
 
-        <div class="option sel" onclick="selOpt(this)">
+        <div class="option sel" onclick="selOpt(this, 'grade')">
           <div class="opt-icon">🎯</div>
           <div class="opt-info">
             <div class="opt-name">الصف الثالث الثانوي</div>
@@ -316,7 +316,7 @@
       <div class="ob-footer">
         <div class="ob-btns">
           <button class="btn-back" onclick="prevStep('s4')">رجوع</button>
-          <button class="btn-next" onclick="goTo('paywall')">ابدأ رحلتك 🚀</button>
+          <button class="btn-next" onclick="finalizeOnboarding()">ابدأ رحلتك 🚀</button>
         </div>
       </div>
     </div>
@@ -328,32 +328,80 @@
 <script>
   const ar=n=>n.toString().replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
 
+  // Track selection values
+  let selectedSpecialization = 'علمي';
+  let selectedGrade = 'الصف الثالث الثانوي';
+
+  function checkS1Valid() {
+    const name = document.getElementById('inp-name').value.trim();
+    const email = document.getElementById('inp-email').value.trim();
+    const pw = document.getElementById('inp-pw').value;
+    const btn = document.getElementById('btn-next-s1');
+
+    const isValid = name.length >= 2 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && pw.length >= 6;
+    
+    if (isValid) {
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+    } else {
+      btn.style.opacity = '0.5';
+      btn.style.pointerEvents = 'none';
+    }
+  }
+
   function nextStep(id) {
+    // Save Step 1 data if moving to Step 2
+    if (id === 's2') {
+      const name = document.getElementById('inp-name').value.trim();
+      const email = document.getElementById('inp-email').value.trim();
+      
+      localStorage.setItem('userName', name);
+      localStorage.setItem('userEmail', email);
+      localStorage.setItem('userAvatar', name.substring(0, 2));
+      localStorage.setItem('isSubscriber', 'false');
+    }
+
+    // Save Exam Date when moving to S5
+    if (id === 's5') {
+       const dateVal = document.getElementById('date-input').value;
+       if (dateVal) {
+          localStorage.setItem('selectedExamDate', dateVal);
+       }
+       localStorage.setItem('userSpecialization', selectedSpecialization);
+       localStorage.setItem('userGrade', selectedGrade);
+    }
+
+    document.querySelectorAll('.screen-step').forEach(s => s.classList.remove('active'));
+    const target = document.getElementById(id);
+    if (target) target.classList.add('active');
+  }
+
+  function prevStep(id) {
     document.querySelectorAll('.screen-step').forEach(s => s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
   }
-  function prevStep(id) {
-    nextStep(id);
-  }
 
-  function selOpt(el) {
+  function selOpt(el, type) {
     el.parentElement.querySelectorAll('.option').forEach(o => o.classList.remove('sel'));
     el.classList.add('sel');
+    const text = el.querySelector('.opt-name').textContent.replace('قريباً', '').trim();
+    if (type === 'spec') selectedSpecialization = text;
+    if (type === 'grade') selectedGrade = text;
   }
 
-  function togglePw(id, eye) {
-    const i = document.getElementById(id);
-    if(i.type === 'password') { i.type = 'text'; eye.textContent = '🙈'; }
-    else { i.type = 'password'; eye.textContent = '👁'; }
+  function finalizeOnboarding() {
+    localStorage.setItem('questionsPerDay', currentQ);
+    goTo('paywall');
   }
 
-  /* Validation (basic) */
+  /* Validation UI */
   function validateName() {
     const v = document.getElementById('inp-name').value.trim();
     const inp = document.getElementById('inp-name');
-    if(v.length > 2) inp.className = 'field-input ok';
+    if(v.length >= 2) inp.className = 'field-input ok';
     else if(v.length > 0) inp.className = 'field-input err';
     else inp.className = 'field-input';
+    checkS1Valid();
   }
   function validateEmail() {
     const v = document.getElementById('inp-email').value.trim();
@@ -361,6 +409,7 @@
     if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) inp.className = 'field-input ok';
     else if(v.length > 0) inp.className = 'field-input err';
     else inp.className = 'field-input';
+    checkS1Valid();
   }
   function validatePw() {
     const v = document.getElementById('inp-pw').value;
@@ -372,7 +421,10 @@
     if(/[A-Z]/.test(v)) s++;
     if(v.length >= 12) s++;
     const cls = ['weak','weak','medium','strong'];
-    for(let i=0; i<s; i++) bars[i].className = 'pw-bar ' + cls[s-1];
+    for(let i=0; i<Math.min(s, 4); i++) {
+        if (s > 0) bars[i].className = 'pw-bar ' + cls[Math.min(s-1, 3)];
+    }
+    checkS1Valid();
   }
 
   /* Date */
