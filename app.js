@@ -108,8 +108,8 @@ function handlePremiumRowClick(event) {
   if (!isSubscriber) {
     event.stopPropagation();
     event.preventDefault();
-    alert('\u0647\u0630\u0647 \u0627\u0644\u0625\u0639\u062f\u0627\u062f\u0627\u062a \u0645\u062a\u0627\u062d\u0629 \u0644\u0644\u0645\u0634\u062a\u0631\u0643\u064a\u0646 \u0641\u0642\u0637 \ud83d\udc8e');
-    goTo('paywall');
+    alert('هذه الميزة ستكون متاحة قريباً 🚀');
+    // goTo('paywall');
   }
 }
 window.handlePremiumRowClick = handlePremiumRowClick;
@@ -117,8 +117,8 @@ window.handlePremiumRowClick = handlePremiumRowClick;
 // ════════ SESSION ════════
 function startSession(subject) {
   if (subject !== 'math' && !isSubscriber) {
-    alert('\u0647\u0630\u0647 \u0627\u0644\u0645\u0627\u062f\u0629 \u0645\u062a\u0627\u062d\u0629 \u0644\u0644\u0645\u0634\u062a\u0631\u0643\u064a\u0646 \u0641\u0642\u0637 \ud83d\udc8e');
-    goTo('paywall');
+    alert('هذه المادة ستكون متاحة قريباً 🚀');
+    // goTo('paywall');
     return;
   }
   localStorage.setItem('currentSubject', subject);
