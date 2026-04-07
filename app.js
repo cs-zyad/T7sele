@@ -53,7 +53,7 @@ window.handleLogin = handleLogin;
 
 function logout() {
   localStorage.clear();
-  location.href = 'login.html';
+  location.href = 'index.html';
 }
 window.logout = logout;
 
