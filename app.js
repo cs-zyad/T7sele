@@ -108,8 +108,8 @@ function handlePremiumRowClick(event) {
   if (!isSubscriber) {
     event.stopPropagation();
     event.preventDefault();
-    alert('هذه الميزة ستكون متاحة قريباً 🚀');
-    // goTo('paywall');
+    alert('هذه الإعدادات متاحة للمشتركين فقط 💎');
+    goTo('paywall');
   }
 }
 window.handlePremiumRowClick = handlePremiumRowClick;
@@ -117,8 +117,8 @@ window.handlePremiumRowClick = handlePremiumRowClick;
 // ════════ SESSION ════════
 function startSession(subject) {
   if (subject !== 'math' && !isSubscriber) {
-    alert('هذه المادة ستكون متاحة قريباً 🚀');
-    // goTo('paywall');
+    alert('هذه المادة متاحة للمشتركين فقط 💎');
+    goTo('paywall');
     return;
   }
   localStorage.setItem('currentSubject', subject);
