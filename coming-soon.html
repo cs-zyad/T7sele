@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>تحصيلي — UI Prototype</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="phone-frame">
+  <div class="dynamic-island"></div>
+  <!-- ════════ SCREEN: COMING SOON ════════ -->
+  <div class="screen active" id="coming">
+    <div class="status-bar dark">
+      <span class="status-time">9:41</span>
+      <span class="status-icons">▲ ◆ ▮▮▮</span>
+    </div>
+    <div class="screen-body" style="padding-top:0;">
+      <div class="coming-header">
+        <div style="position:relative;">
+          <div class="coming-trophy">🏆</div>
+          <div class="coming-header-title">المنافسة</div>
+          <div class="coming-header-sub">ميزة قادمة قريباً</div>
+        </div>
+      </div>
+
+      <div class="coming-body">
+        <div class="coming-features">
+          <div class="coming-feat">
+            <div class="cf-icon">👥</div>
+            <div>
+              <div class="cf-title">قروب المنافسة</div>
+              <div class="cf-desc">أنشئ قروباً مع أصدقائك أو انضم لمجتمع وتنافسوا معاً</div>
+            </div>
+          </div>
+          <div class="coming-feat">
+            <div class="cf-icon">🥇</div>
+            <div>
+              <div class="cf-title">Leaderboard أسبوعي</div>
+              <div class="cf-desc">ترتيب أسبوعي بناءً على الدقة وعدد الأسئلة المحلولة</div>
+            </div>
+          </div>
+          <div class="coming-feat">
+            <div class="cf-icon">📊</div>
+            <div>
+              <div class="cf-title">مقارنة مع الأصدقاء</div>
+              <div class="cf-desc">شوف أداءك مقارنةً بأصدقائك في كل مادة</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="coming-notify">
+          <div class="cn-title">سجّل اهتمامك 🔔</div>
+          <div class="cn-sub">كن أول من يعلم عند الإطلاق</div>
+          <div class="cn-input-row">
+            <input class="cn-input" placeholder="رقم جوالك" type="tel" dir="ltr">
+            <button class="cn-btn">سجّل</button>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <button class="btn-mistakes" onclick="goTo('home')">← رجوع للرئيسية</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <div class="nav-item" onclick="goTo('home')">
+        <div class="nav-active-pill"></div>
+        <div class="nav-icon">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 11L13 3L23 11V22C23 22.55 22.55 23 22 23H17V17H9V23H4C3.45 23 3 22.55 3 22V11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <rect x="9" y="17" width="8" height="6" rx="1" fill="currentColor" opacity="0.25"/>
+          </svg>
+        </div>
+        <div class="nav-label">الرئيسية</div>
+        <div class="nav-active-dot"></div>
+      </div>
+      
+      <div class="nav-item" onclick="goTo('session')">
+        <div class="nav-active-pill"></div>
+        <div class="nav-icon">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="3" width="14" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/>
+            <line x1="4" y1="3" x2="4" y2="23" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <line x1="9" y1="9" x2="15" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="9" y1="13" x2="15" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="9" y1="17" x2="13" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="20" cy="19" r="4" fill="var(--ink)" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="20" y1="17" x2="20" y2="21" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="18" y1="19" x2="22" y2="19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="nav-label">جلستي</div>
+        <div class="nav-active-dot"></div>
+      </div>
+      
+      <div class="nav-item" onclick="goTo('progress-screen')">
+        <div class="nav-active-pill"></div>
+        <div class="nav-icon">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="17" width="5" height="7" rx="1.5" fill="currentColor" opacity="0.5"/>
+            <rect x="10.5" y="12" width="5" height="12" rx="1.5" fill="currentColor" opacity="0.7"/>
+            <rect x="18" y="7" width="5" height="17" rx="1.5" fill="currentColor"/>
+            <polyline points="18,5 21,2 24,5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="21" y1="2" x2="21" y2="8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="nav-label">تقدمي</div>
+        <div class="nav-active-dot"></div>
+      </div>
+      
+      <div class="nav-item active disabled">
+        <div class="nav-active-pill"></div>
+        <div class="nav-icon">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 4H18V14C18 17.31 15.76 20 13 20C10.24 20 8 17.31 8 14V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M8 7C6 7 4.5 8 4.5 10.5C4.5 13 6 14 8 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M18 7C20 7 21.5 8 21.5 10.5C21.5 13 20 14 18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="13" y1="20" x2="13" y2="23" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="9" y1="23" x2="17" y2="23" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="coming-soon-tag">قريباً</div>
+        <div class="nav-label">منافسة</div>
+      </div>
+      
+      <div class="nav-item" onclick="goTo('settings')">
+        <div class="nav-active-pill"></div>
+        <div class="nav-icon">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="13" cy="13" r="3" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M13 3V5M13 21V23M3 13H5M21 13H23M5.64 5.64L7.05 7.05M18.95 18.95L20.36 20.36M20.36 5.64L18.95 7.05M7.05 18.95L5.64 20.36" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="nav-label">إعدادات</div>
+        <div class="nav-active-dot"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

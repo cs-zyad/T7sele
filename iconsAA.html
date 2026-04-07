@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحصيلي — مكتبة الأيقونات</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --g: #00C896;
+  --gd: #009E77;
+  --gl: rgba(0,200,150,0.12);
+  --ink: #0D1F1A;
+  --inkm: #3D5A52;
+  --inkl: #8FA89F;
+  --white: #FFFFFF;
+  --border: rgba(255,255,255,0.07);
+  --card: rgba(255,255,255,0.04);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--ink);
+  min-height: 100vh;
+  padding: 40px 32px;
+}
+
+.page-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  color: var(--inkl);
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--inkl);
+  letter-spacing: 2px;
+  margin: 32px 0 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+}
+
+.icon-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.icon-item:hover {
+  background: var(--gl);
+  border-color: rgba(0,200,150,0.2);
+  transform: translateY(-2px);
+}
+
+.icon-bg {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--gl);
+  border: 1px solid rgba(0,200,150,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-bg.gray {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.07);
+}
+
+.icon-bg.red {
+  background: rgba(255,59,48,0.08);
+  border-color: rgba(255,59,48,0.15);
+}
+
+.icon-bg.orange {
+  background: rgba(255,100,0,0.08);
+  border-color: rgba(255,100,0,0.15);
+}
+
+.icon-name {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--inkl);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.icon-use {
+  font-size: 0.55rem;
+  color: rgba(143,168,159,0.6);
+  text-align: center;
+}
+
+/* NAVBAR PREVIEW */
+.navbar {
+  width: 100%;
+  max-width: 420px;
+  height: 72px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  margin: 16px auto;
+}
+
+.ni {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.ni:hover { background: var(--gl); }
+.ni.active { background: var(--gl); }
+.ni-lbl { font-size: 0.58rem; font-weight: 600; color: var(--inkl); }
+.ni.active .ni-lbl { color: var(--g); }
+.ni-soon { font-size: 0.42rem; background: var(--gl); color: var(--g); padding: 2px 5px; border-radius: 5px; font-weight: 700; border: 1px solid rgba(0,200,150,0.2); }
+.ni-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--g); display: none; position: absolute; bottom: 2px; }
+.ni.active .ni-dot { display: block; }
+</style>
+</head>
+<body>
+
+<div class="page-title">TAHSILI — ICON LIBRARY · مكتبة الأيقونات</div>
+
+<!-- ═══ NAVBAR ═══ -->
+<div class="section-title">NAVBAR — شريط التنقل</div>
+<div class="navbar">
+  <div class="ni active" onclick="setActive(this)">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <path d="M3 10L12 3L21 10V20C21 20.55 20.55 21 20 21H16V15H8V21H4C3.45 21 3 20.55 3 20V10Z" stroke="#00C896" stroke-width="1.8" stroke-linejoin="round"/>
+      <rect x="8" y="15" width="8" height="6" rx="1" fill="#00C896" opacity="0.25"/>
+    </svg>
+    <div class="ni-lbl">الرئيسية</div>
+    <div class="ni-dot"></div>
+  </div>
+  <div class="ni" onclick="setActive(this)">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <rect x="4" y="3" width="13" height="18" rx="2" stroke="#8FA89F" stroke-width="1.8"/>
+      <line x1="4" y1="3" x2="4" y2="21" stroke="#8FA89F" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="9" y1="9" x2="14" y2="9" stroke="#8FA89F" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="9" y1="13" x2="14" y2="13" stroke="#8FA89F" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="9" y1="17" x2="12" y2="17" stroke="#8FA89F" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="19" cy="18" r="3.5" fill="#0D1F1A" stroke="#8FA89F" stroke-width="1.4"/>
+      <line x1="19" y1="16.5" x2="19" y2="19.5" stroke="#8FA89F" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="17.5" y1="18" x2="20.5" y2="18" stroke="#8FA89F" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+    <div class="ni-lbl">جلستي</div>
+    <div class="ni-dot"></div>
+  </div>
+  <div class="ni" onclick="setActive(this)">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <rect x="3" y="16" width="4" height="6" rx="1.5" fill="#8FA89F" opacity="0.5"/>
+      <rect x="10" y="11" width="4" height="11" rx="1.5" fill="#8FA89F" opacity="0.7"/>
+      <rect x="17" y="6" width="4" height="16" rx="1.5" fill="#8FA89F"/>
+      <polyline points="17,4 19.5,1.5 22,4" stroke="#8FA89F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="19.5" y1="1.5" x2="19.5" y2="7" stroke="#8FA89F" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <div class="ni-lbl">تقدمي</div>
+    <div class="ni-dot"></div>
+  </div>
+  <div class="ni" onclick="setActive(this)">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <path d="M7 4H17V13C17 16.31 14.76 19 12 19C9.24 19 7 16.31 7 13V4Z" stroke="#8FA89F" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M7 7C5.5 7 4 8 4 10C4 12 5.5 13 7 13" stroke="#8FA89F" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M17 7C18.5 7 20 8 20 10C20 12 18.5 13 17 13" stroke="#8FA89F" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="12" y1="19" x2="12" y2="22" stroke="#8FA89F" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="9" y1="22" x2="15" y2="22" stroke="#8FA89F" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+    <div class="ni-soon">قريباً</div>
+    <div class="ni-lbl">منافسة</div>
+  </div>
+  <div class="ni" onclick="setActive(this)">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="3" stroke="#8FA89F" stroke-width="1.8"/>
+      <path d="M12 2V4M12 20V22M2 12H4M20 12H22M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M19.07 4.93L17.66 6.34M6.34 17.66L4.93 19.07" stroke="#8FA89F" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+    <div class="ni-lbl">إعدادات</div>
+    <div class="ni-dot"></div>
+  </div>
+</div>
+
+<!-- ═══ SESSION ICONS ═══ -->
+<div class="section-title">SESSION — أيقونات الجلسة</div>
+<div class="icons-grid">
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="#00C896" stroke-width="1.8"/>
+        <polyline points="12,7 12,12 15,15" stroke="#00C896" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">مؤقت الجلسة</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <polyline points="20,6 9,17 4,12" stroke="#00C896" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">إجابة صحيحة</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg red">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <line x1="18" y1="6" x2="6" y2="18" stroke="#FF3B30" stroke-width="2" stroke-linecap="round"/>
+        <line x1="6" y1="6" x2="18" y2="18" stroke="#FF3B30" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">إجابة خاطئة</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="#00C896" stroke-width="1.8"/>
+        <line x1="12" y1="8" x2="12" y2="12" stroke="#00C896" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="12" cy="16" r="1" fill="#00C896"/>
+      </svg>
+    </div>
+    <div class="icon-name">شرح الحل</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="#00C896" stroke-width="1.8" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">Streak</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L13.5 8.5L20 7L15.5 12L20 17L13.5 15.5L12 22L10.5 15.5L4 17L8.5 12L4 7L10.5 8.5Z" stroke="#00C896" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">نقاط</div>
+  </div>
+
+</div>
+
+<!-- ═══ HOME ICONS ═══ -->
+<div class="section-title">HOME — أيقونات الرئيسية</div>
+<div class="icons-grid">
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <rect x="3" y="4" width="18" height="18" rx="2" stroke="#00C896" stroke-width="1.8"/>
+        <line x1="3" y1="9" x2="21" y2="9" stroke="#00C896" stroke-width="1.5"/>
+        <line x1="8" y1="2" x2="8" y2="6" stroke="#00C896" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="16" y1="2" x2="16" y2="6" stroke="#00C896" stroke-width="1.8" stroke-linecap="round"/>
+        <rect x="7" y="13" width="3" height="3" rx="0.5" fill="#00C896" opacity="0.6"/>
+        <rect x="12" y="13" width="3" height="3" rx="0.5" fill="#00C896" opacity="0.3"/>
+      </svg>
+    </div>
+    <div class="icon-name">تاريخ الاختبار</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg orange">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" stroke="#FF6400" stroke-width="1.8"/>
+        <circle cx="12" cy="9" r="2.5" stroke="#FF6400" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="icon-name">الموقع</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z" stroke="#00C896" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21" stroke="#00C896" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">إشعار</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="8" r="4" stroke="#00C896" stroke-width="1.8"/>
+        <path d="M4 20C4 17 7.58 14 12 14C16.42 14 20 17 20 20" stroke="#00C896" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">الملف الشخصي</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="#00C896" stroke-width="1.8" stroke-linejoin="round"/>
+        <line x1="8" y1="9" x2="16" y2="9" stroke="#00C896" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="8" y1="13" x2="13" y2="13" stroke="#00C896" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">رسالة</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <circle cx="11" cy="11" r="8" stroke="#00C896" stroke-width="1.8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="#00C896" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">بحث</div>
+  </div>
+
+</div>
+
+<!-- ═══ PROGRESS ICONS ═══ -->
+<div class="section-title">PROGRESS — أيقونات التقدم</div>
+<div class="icons-grid">
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <polyline points="22,12 18,12 15,21 9,3 6,12 2,12" stroke="#00C896" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">الأداء</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M18 20V10M12 20V4M6 20V14" stroke="#00C896" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">إحصائيات</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#00C896" stroke-width="1.8"/>
+        <path d="M12 2C12 2 8 8 8 12C8 16 12 22 12 22" stroke="#00C896" stroke-width="1.5"/>
+        <line x1="2" y1="12" x2="22" y2="12" stroke="#00C896" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="icon-name">المواد</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M14.5 10C14.5 10 14 6 10 6C6 6 4 9 4 12C4 15 6 18 10 18C14 18 14.5 14 14.5 14" stroke="#00C896" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M20 12H10M20 12L17 9M20 12L17 15" stroke="#00C896" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">تصدير</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg red">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="#FF3B30" stroke-width="1.8"/>
+        <line x1="12" y1="8" x2="12" y2="12" stroke="#FF3B30" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="12" cy="16" r="1" fill="#FF3B30"/>
+      </svg>
+    </div>
+    <div class="icon-name">نقطة ضعف</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#00C896" stroke-width="1.8" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">نقطة قوة</div>
+  </div>
+
+</div>
+
+<!-- ═══ SETTINGS ICONS ═══ -->
+<div class="section-title">SETTINGS — أيقونات الإعدادات</div>
+<div class="icons-grid">
+
+  <div class="icon-item">
+    <div class="icon-bg gray">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="3" stroke="#8FA89F" stroke-width="1.8"/>
+        <path d="M12 2V4M12 20V22M2 12H4M20 12H22M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M19.07 4.93L17.66 6.34M6.34 17.66L4.93 19.07" stroke="#8FA89F" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">الإعدادات</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg gray">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <rect x="2" y="5" width="20" height="14" rx="2" stroke="#8FA89F" stroke-width="1.8"/>
+        <line x1="2" y1="10" x2="22" y2="10" stroke="#8FA89F" stroke-width="1.5"/>
+        <rect x="5" y="14" width="5" height="2" rx="0.5" fill="#8FA89F" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="icon-name">بطاقة الدفع</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg red">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="#FF3B30" stroke-width="1.8" stroke-linecap="round"/>
+        <polyline points="16,17 21,12 16,7" stroke="#FF3B30" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="21" y1="12" x2="9" y2="12" stroke="#FF3B30" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">تسجيل خروج</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg gray">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z" stroke="#8FA89F" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21" stroke="#8FA89F" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">الإشعارات</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg gray">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="8" r="4" stroke="#8FA89F" stroke-width="1.8"/>
+        <path d="M4 20C4 17 7.58 14 12 14C16.42 14 20 17 20 20" stroke="#8FA89F" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="19" y1="8" x2="23" y2="8" stroke="#8FA89F" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="21" y1="6" x2="21" y2="10" stroke="#8FA89F" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">إضافة مستخدم</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg gray">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="#8FA89F" stroke-width="1.8"/>
+        <line x1="12" y1="8" x2="12" y2="12" stroke="#8FA89F" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="12" cy="16" r="1" fill="#8FA89F"/>
+      </svg>
+    </div>
+    <div class="icon-name">مساعدة</div>
+  </div>
+
+</div>
+
+<!-- ═══ ONBOARDING ICONS ═══ -->
+<div class="section-title">ONBOARDING — أيقونات الإعداد</div>
+<div class="icons-grid">
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M2 3H8C9.06087 3 10.0783 3.42143 10.8284 4.17157C11.5786 4.92172 12 5.93913 12 7V21C12 20.2044 11.6839 19.4413 11.1213 18.8787C10.5587 18.3161 9.79565 18 9 18H2V3Z" stroke="#00C896" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M22 3H16C14.9391 3 13.9217 3.42143 13.1716 4.17157C12.4214 4.92172 12 5.93913 12 7V21C12 20.2044 12.3161 19.4413 12.8787 18.8787C13.4413 18.3161 14.2044 18 15 18H22V3Z" stroke="#00C896" stroke-width="1.8" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">التخصص</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M22 10V15C22 16.1046 21.1046 17 20 17H4C2.89543 17 2 16.1046 2 15V9C2 7.89543 2.89543 7 4 7H13" stroke="#00C896" stroke-width="1.8" stroke-linecap="round"/>
+        <polyline points="16,3 20,7 16,11" stroke="#00C896" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="10" y1="12" x2="14" y2="12" stroke="#00C896" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">الصف الدراسي</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <rect x="3" y="4" width="18" height="18" rx="2" stroke="#00C896" stroke-width="1.8"/>
+        <line x1="3" y1="9" x2="21" y2="9" stroke="#00C896" stroke-width="1.5"/>
+        <line x1="8" y1="2" x2="8" y2="6" stroke="#00C896" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="16" y1="2" x2="16" y2="6" stroke="#00C896" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="12" cy="15" r="2" fill="#00C896" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="icon-name">تاريخ الاختبار</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="#00C896" stroke-width="1.8"/>
+        <polyline points="12,7 12,12 15,15" stroke="#00C896" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">وقت التذكير</div>
+  </div>
+
+  <div class="icon-item">
+    <div class="icon-bg">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <rect x="4" y="4" width="6" height="6" rx="1" stroke="#00C896" stroke-width="1.8"/>
+        <rect x="14" y="4" width="6" height="6" rx="1" stroke="#00C896" stroke-width="1.8"/>
+        <rect x="4" y="14" width="6" height="6" rx="1" stroke="#00C896" stroke-width="1.8"/>
+        <circle cx="17" cy="17" r="3" fill="#00C896" opacity="0.3" stroke="#00C896" stroke-width="1.5"/>
+        <line x1="17" y1="15.5" x2="17" y2="18.5" stroke="#00C896" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="15.5" y1="17" x2="18.5" y2="17" stroke="#00C896" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="icon-name">عدد الأسئلة</div>
+  </div>
+
+</div>
+
+<script>
+function setActive(el) {
+  document.querySelectorAll('.ni').forEach(n => n.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
+
+</body>
+</html>

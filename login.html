@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>تحصيلي — UI Prototype</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="phone-frame">
+  <div class="dynamic-island"></div>
+  <!-- ════════ SCREEN: LOGIN ════════ -->
+  <div class="screen active" id="login">
+    <div class="status-bar dark">
+      <span class="status-time">9:41</span>
+      <span class="status-icons">▲ ◆ ▮▮▮</span>
+    </div>
+    <div class="screen-body" style="padding-top:0;">
+      <div class="login-top">
+        <div class="login-icon">ت</div>
+        <div class="login-title">أهلاً بك 👋</div>
+        <div class="login-sub">سجّل دخولك وابدأ استعدادك</div>
+      </div>
+      <div class="login-form">
+        <div class="form-group">
+          <label class="form-label">البريد الإلكتروني</label>
+          <input class="form-input" type="email" placeholder="example@gmail.com" dir="ltr">
+        </div>
+        <div class="form-group">
+          <label class="form-label">كلمة المرور</label>
+          <input class="form-input" type="password" placeholder="••••••••" dir="ltr">
+        </div>
+        <button class="btn-main" onclick="handleLogin()">تسجيل الدخول</button>
+        <div class="login-switch">
+          ما عندك حساب؟ <a onclick="goTo('onboarding')">سجّل الحين</a>
+        </div>
+        <div class="divider"></div>
+        <div style="text-align:center; font-size:0.75rem; color:var(--ink-l);">
+          ٧ أيام مجانية · بدون بطاقة ائتمانية
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
