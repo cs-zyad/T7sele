@@ -1,0 +1,131 @@
+<title>شعارات تحصيلي+</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: grid of numbered concept cards; each shows app icon, horizontal lockup on beige and on green. */
+:root {
+  --bg: #F5EFE3; --surface: #FBF8F1; --border: #E3D9C3;
+  --text: #16241E; --text-2: #4F5E57; --primary: #1F4D3A; --honey: #D9A441;
+  --font: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg:#0E1714; --surface:#16231E; --border:#24352E; --text:#F1EBDD; --text-2:#B3BDB6; --primary:#8FC2A5; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg:#0E1714; --surface:#16231E; --border:#24352E; --text:#F1EBDD; --text-2:#B3BDB6; --primary:#8FC2A5; color-scheme: dark; }
+* { box-sizing: border-box; }
+html { direction: rtl; }
+body {
+  background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.7;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+}
+.wrap { max-width: 1080px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+h1 { margin: 0; font-size: 30px; font-weight: 800; text-wrap: balance; }
+.lead { margin: 0; color: var(--text-2); max-width: 62ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.stage { display: grid; grid-template-columns: auto 1fr; }
+.icon-cell { background: #E9E1CF; display: grid; place-items: center; padding: 22px; }
+.icon-cell svg { width: 104px; height: 104px; filter: drop-shadow(0 8px 18px rgba(18,51,42,.25)); }
+.locks { display: flex; flex-direction: column; }
+.lock { flex: 1; display: flex; align-items: center; justify-content: center; padding: 16px 12px; }
+.lock.light { background: #F5EFE3; color: #12332A; }
+.lock.dark { background: #1F4D3A; color: #FBF8F1; }
+.lockup { display: inline-flex; align-items: center; gap: 8px; }
+.lockup svg { width: 38px; height: 38px; flex: none; }
+.lockup .w { font-size: 28px; font-weight: 800; line-height: 1; }
+.lockup .w b { color: #D9A441; font-weight: 800; }
+.info { padding: 14px 18px 18px; display: flex; flex-direction: column; gap: 4px; }
+.info h2 { margin: 0; font-size: 18px; font-weight: 800; display: flex; gap: 10px; align-items: center; }
+.num { width: 28px; height: 28px; border-radius: 999px; background: var(--primary); color: var(--bg); display: grid; place-items: center; font-size: 14px; flex: none; }
+.info p { margin: 0; color: var(--text-2); font-size: 14px; }
+@media (max-width: 420px) {
+  .grid { grid-template-columns: 1fr; }
+  .icon-cell svg { width: 84px; height: 84px; }
+  .lockup .w { font-size: 24px; }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <!-- 1: ت with a plus as its second dot -->
+  <symbol id="c1" viewBox="0 0 120 120">
+    <path d="M24 56 C 24 84 40 92 60 92 C 80 92 96 84 96 56" fill="none" stroke="#F5EFE3" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="45" cy="40" r="8" fill="#F5EFE3"/>
+    <rect x="65" y="36" width="24" height="8" rx="4" fill="#D9A441"/>
+    <rect x="73" y="28" width="8" height="24" rx="4" fill="#D9A441"/>
+  </symbol>
+  <!-- 2: peak with a plus star -->
+  <symbol id="c2" viewBox="0 0 120 120">
+    <path d="M18 94 L50 46 Q55 39 60 46 L72 64 L80 54 Q84 49 88 54 L104 94 Z" fill="#F5EFE3"/>
+    <path d="M50 46 Q55 39 60 46 L64 52 L56 56 L50 52 L45 54 Z" fill="#D9A441"/>
+    <rect x="76" y="24" width="22" height="7" rx="3.5" fill="#D9A441"/>
+    <rect x="83.5" y="16.5" width="7" height="22" rx="3.5" fill="#D9A441"/>
+  </symbol>
+  <!-- 3: open book with plus -->
+  <symbol id="c3" viewBox="0 0 120 120">
+    <path d="M22 48 Q40 38 57 48 V92 Q40 82 22 88 Z" fill="#F5EFE3"/>
+    <path d="M98 48 Q80 38 63 48 V92 Q80 82 98 88 Z" fill="#F5EFE3"/>
+    <rect x="49" y="22" width="22" height="7" rx="3.5" fill="#D9A441"/>
+    <rect x="56.5" y="14.5" width="7" height="22" rx="3.5" fill="#D9A441"/>
+  </symbol>
+  <!-- 4: check that turns into a rising arrow -->
+  <symbol id="c4" viewBox="0 0 120 120">
+    <path d="M26 64 L48 86 L92 40" fill="none" stroke="#F5EFE3" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M70 38 H94 V62" fill="none" stroke="#F5EFE3" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="76" y="84" width="22" height="7" rx="3.5" fill="#D9A441"/>
+    <rect x="83.5" y="76.5" width="7" height="22" rx="3.5" fill="#D9A441"/>
+  </symbol>
+  <!-- 5: crest / shield -->
+  <symbol id="c5" viewBox="0 0 120 120">
+    <path d="M60 16 L96 28 V58 C96 82 80 96 60 106 C40 96 24 82 24 58 V28 Z" fill="none" stroke="#D9A441" stroke-width="4.5" stroke-linejoin="round"/>
+    <path d="M38 58 C 38 76 48 82 60 82 C 72 82 82 76 82 58" fill="none" stroke="#F5EFE3" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="51" cy="46" r="5.5" fill="#F5EFE3"/>
+    <rect x="63" y="43" width="16" height="6" rx="3" fill="#D9A441"/>
+    <rect x="68" y="38" width="6" height="16" rx="3" fill="#D9A441"/>
+  </symbol>
+  <!-- 6: progress ring with plus -->
+  <symbol id="c6" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="34" fill="none" stroke="#F5EFE3" stroke-opacity=".22" stroke-width="11"/>
+    <circle cx="60" cy="60" r="34" fill="none" stroke="#D9A441" stroke-width="11" stroke-linecap="round" stroke-dasharray="165 214" transform="rotate(-90 60 60)"/>
+    <rect x="44" y="55" width="32" height="10" rx="5" fill="#F5EFE3"/>
+    <rect x="55" y="44" width="10" height="32" rx="5" fill="#F5EFE3"/>
+  </symbol>
+</defs></svg>
+
+<div class="wrap">
+  <header style="display:flex;flex-direction:column;gap:8px">
+    <h1>أفكار شعار تحصيلي+</h1>
+    <p class="lead">ست أفكار مختلفة بنفس الألوان: أخضر زيتي غامق وعسلي وبيج. اختر رقم الفكرة اللي تعجبك، أو اجمع بين فكرتين، وأطوّرها لك.</p>
+  </header>
+  <div class="grid" id="grid"></div>
+</div>
+
+<script>
+const CONCEPTS = [
+  ["c1", "حرف التاء", "حرف «ت» من اسم التطبيق، ونقطته الثانية صارت «+» عسلية. بسيط ويتذكره الطالب بسرعة."],
+  ["c2", "القمة", "جبل يوصل لقمته، ونجمة «+» فوقه. يعبّر عن الوصول لأعلى درجة."],
+  ["c3", "الكتاب المفتوح", "كتاب مفتوح وفوقه «+». واضح أنه تطبيق تعليمي من أول نظرة."],
+  ["c4", "صح وتقدّم", "علامة صح تتحول لسهم صاعد. تجمع الإجابة الصحيحة مع التقدم في المستوى."],
+  ["c5", "الدرع الفخم", "إطار ذهبي على شكل درع وفيه حرف «ت» بنقطة «+». شكل رسمي وفخم."],
+  ["c6", "دائرة الإنجاز", "دائرة تقدم ذهبية حول علامة «+». تشبه حلقات الإنجاز في التطبيقات الحديثة."]
+];
+const grid = document.getElementById("grid");
+CONCEPTS.forEach(([id, name, desc], i) => {
+  const mark = (s) => `<svg viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="27" fill="#1F4D3A"/><use href="#${id}"/></svg>`;
+  const plain = `<svg viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="27" fill="#163A2C"/><use href="#${id}"/></svg>`;
+  grid.insertAdjacentHTML("beforeend", `
+    <article class="card">
+      <div class="stage">
+        <div class="icon-cell">${mark()}</div>
+        <div class="locks">
+          <div class="lock light"><span class="lockup">${mark()}<span class="w">تحصيلي<b>+</b></span></span></div>
+          <div class="lock dark"><span class="lockup">${plain}<span class="w">تحصيلي<b>+</b></span></span></div>
+        </div>
+      </div>
+      <div class="info"><h2><span class="num">${i + 1}</span>${name}</h2><p>${desc}</p></div>
+    </article>`);
+});
+</script>
