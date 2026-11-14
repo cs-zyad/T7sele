@@ -2,11 +2,11 @@
   <title>تحصيلي+</title>
   <!-- Wordmark uses the Cairo font (ExtraBold 800). Convert text to outlines before final export. -->
   <g transform="translate(300 0)">
-    <rect width="120" height="120" rx="27" fill="#5E7230"/>
+    <rect width="120" height="120" rx="27" fill="#1F4D3A"/>
     <rect x="46" y="36" width="20" height="60" rx="10" fill="#F5EFE3"/>
     <rect x="26" y="56" width="60" height="20" rx="10" fill="#F5EFE3"/>
     <path d="M62 42 C 63 27 77 18 97 19 C 96 36 82 45 62 42 Z" fill="#D9A441"/>
-    <path d="M65 40 L 88 26" stroke="#5E7230" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+    <path d="M65 40 L 88 26" stroke="#1F4D3A" stroke-width="2.6" stroke-linecap="round" fill="none"/>
   </g>
-  <text x="280" y="84" direction="rtl" text-anchor="start" font-family="Cairo, sans-serif" font-weight="800" font-size="76" fill="#3B4A1E">تحصيلي<tspan fill="#D9A441">+</tspan></text>
+  <text x="280" y="84" direction="rtl" text-anchor="start" font-family="Cairo, sans-serif" font-weight="800" font-size="76" fill="#12332A">تحصيلي<tspan fill="#D9A441">+</tspan></text>
 </svg>

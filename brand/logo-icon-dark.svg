@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="1024" height="1024">
   <title>تحصيلي+ (داكن)</title>
-  <rect width="120" height="120" rx="27" fill="#A9C36A"/>
-  <rect x="46" y="36" width="20" height="60" rx="10" fill="#151A0F"/>
-  <rect x="26" y="56" width="60" height="20" rx="10" fill="#151A0F"/>
+  <rect width="120" height="120" rx="27" fill="#8FC2A5"/>
+  <rect x="46" y="36" width="20" height="60" rx="10" fill="#0E1714"/>
+  <rect x="26" y="56" width="60" height="20" rx="10" fill="#0E1714"/>
   <path d="M62 42 C 63 27 77 18 97 19 C 96 36 82 45 62 42 Z" fill="#E6B85A"/>
-  <path d="M65 40 L 88 26" stroke="#A9C36A" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+  <path d="M65 40 L 88 26" stroke="#8FC2A5" stroke-width="2.6" stroke-linecap="round" fill="none"/>
 </svg>

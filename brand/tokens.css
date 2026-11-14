@@ -1,13 +1,13 @@
 /* تحصيلي+ — design tokens */
 :root {
-  --olive-100: #E6ECD3;
-  --olive-600: #5E7230;
-  --olive-800: #3B4A1E;
+  --green-100: #E3EDE6;
+  --green-600: #1F4D3A;
+  --green-800: #12332A;
   --beige-50:  #FBF8F1;
   --beige-100: #F5EFE3;
   --beige-300: #E3D9C3;
-  --ink-900: #232A16;
-  --ink-600: #5C6350;
+  --ink-900: #16241E;
+  --ink-600: #4F5E57;
   --honey-500: #D9A441;
   --success: #4C9A5B;
   --error:   #B5472F;
@@ -18,28 +18,28 @@
   --border:     var(--beige-300);
   --text:       var(--ink-900);
   --text-2:     var(--ink-600);
-  --primary:    var(--olive-600);
-  --primary-soft: var(--olive-100);
+  --primary:    var(--green-600);
+  --primary-soft: var(--green-100);
   --on-primary: #FFFFFF;
   --accent:     var(--honey-500);
 
   --radius-btn: 14px;
   --radius-card: 20px;
   --radius-sheet: 28px;
-  --shadow-card: 0 4px 16px rgba(59, 74, 30, .08);
+  --shadow-card: 0 4px 16px rgba(18,51,42, .08);
   --font: 'Cairo', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg:         #151A0F;
-    --surface:    #1F2615;
-    --border:     #2E3722;
+    --bg:         #0E1714;
+    --surface:    #16231E;
+    --border:     #24352E;
     --text:       #F1EBDD;
-    --text-2:     #B5B8A6;
-    --primary:    #A9C36A;
-    --primary-soft: #2A3419;
-    --on-primary: #151A0F;
+    --text-2:     #B3BDB6;
+    --primary:    #8FC2A5;
+    --primary-soft: #1C3329;
+    --on-primary: #0E1714;
     --accent:     #E6B85A;
     --shadow-card: none;
   }

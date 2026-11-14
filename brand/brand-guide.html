@@ -9,11 +9,11 @@
   --bg: #F5EFE3;
   --surface: #FBF8F1;
   --border: #E3D9C3;
-  --text: #232A16;
-  --text-2: #5C6350;
-  --primary: #5E7230;
-  --primary-soft: #E6ECD3;
-  --primary-strong: #3B4A1E;
+  --text: #16241E;
+  --text-2: #4F5E57;
+  --primary: #1F4D3A;
+  --primary-soft: #E3EDE6;
+  --primary-strong: #12332A;
   --honey: #D9A441;
   --on-primary: #FFFFFF;
   --font: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
@@ -21,18 +21,18 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #151A0F; --surface: #1F2615; --border: #2E3722;
-    --text: #F1EBDD; --text-2: #B5B8A6;
-    --primary: #A9C36A; --primary-soft: #2A3419; --primary-strong: #C9DC98;
-    --honey: #E6B85A; --on-primary: #151A0F;
+    --bg: #0E1714; --surface: #16231E; --border: #24352E;
+    --text: #F1EBDD; --text-2: #B3BDB6;
+    --primary: #8FC2A5; --primary-soft: #1C3329; --primary-strong: #B5DCC5;
+    --honey: #E6B85A; --on-primary: #0E1714;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #151A0F; --surface: #1F2615; --border: #2E3722;
-  --text: #F1EBDD; --text-2: #B5B8A6;
-  --primary: #A9C36A; --primary-soft: #2A3419; --primary-strong: #C9DC98;
-  --honey: #E6B85A; --on-primary: #151A0F;
+  --bg: #0E1714; --surface: #16231E; --border: #24352E;
+  --text: #F1EBDD; --text-2: #B3BDB6;
+  --primary: #8FC2A5; --primary-soft: #1C3329; --primary-strong: #B5DCC5;
+  --honey: #E6B85A; --on-primary: #0E1714;
   color-scheme: dark;
 }
 
@@ -69,7 +69,7 @@ section { display: flex; flex-direction: column; gap: 24px; }
 .hero h1 .p { color: var(--honey); }
 .tagline { font-size: 20px; font-weight: 600; color: var(--primary); }
 .hero-icon { display: flex; justify-content: center; }
-.hero-icon svg { width: min(260px, 70vw); height: auto; filter: drop-shadow(0 18px 40px rgba(59,74,30,.22)); }
+.hero-icon svg { width: min(260px, 70vw); height: auto; filter: drop-shadow(0 18px 40px rgba(18,51,42,.22)); }
 
 /* ---------- Logo ---------- */
 .lockup { display: inline-flex; align-items: center; gap: 12px; direction: rtl; }
@@ -82,12 +82,12 @@ section { display: flex; flex-direction: column; gap: 24px; }
   align-items: center; gap: 28px; border: 1px solid var(--border);
 }
 .logo-tile .cap { font-size: 13px; font-weight: 600; align-self: stretch; text-align: center; }
-.t-beige { background: #F5EFE3; color: #3B4A1E; }
-.t-beige .cap { color: #5C6350; }
-.t-olive { background: #5E7230; color: #FBF8F1; border-color: #5E7230; }
-.t-olive .cap { color: #E6ECD3; }
-.t-dark { background: #151A0F; color: #F1EBDD; border-color: #2E3722; }
-.t-dark .cap { color: #B5B8A6; }
+.t-beige { background: #F5EFE3; color: #12332A; }
+.t-beige .cap { color: #4F5E57; }
+.t-olive { background: #1F4D3A; color: #FBF8F1; border-color: #1F4D3A; }
+.t-olive .cap { color: #E3EDE6; }
+.t-dark { background: #0E1714; color: #F1EBDD; border-color: #24352E; }
+.t-dark .cap { color: #B3BDB6; }
 
 .icon-sizes { display: flex; align-items: flex-end; gap: 28px; flex-wrap: wrap; }
 .icon-sizes figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }
@@ -142,7 +142,7 @@ section { display: flex; flex-direction: column; gap: 24px; }
 .btn { font: inherit; font-weight: 700; font-size: 16px; height: 52px; border-radius: 14px; border: 0; width: 100%; cursor: pointer; }
 .btn-primary { background: var(--primary); color: var(--on-primary); }
 .btn-secondary { background: var(--primary-soft); color: var(--primary-strong); }
-.btn-honey { background: #D9A441; color: #232A16; }
+.btn-honey { background: #D9A441; color: #16241E; }
 .btn-text { background: transparent; color: var(--primary); height: 40px; }
 .btn:focus-visible { outline: 3px solid var(--honey); outline-offset: 2px; }
 
@@ -163,7 +163,7 @@ section { display: flex; flex-direction: column; gap: 24px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; background: var(--primary-soft); color: var(--primary-strong); }
 .chip.on { background: var(--primary); color: var(--on-primary); }
-.chip.plus { background: #D9A441; color: #232A16; }
+.chip.plus { background: #D9A441; color: #16241E; }
 
 /* ---------- Voice ---------- */
 .voice { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
@@ -175,15 +175,15 @@ section { display: flex; flex-direction: column; gap: 24px; }
 .phones { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
 .phone-col { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .phone {
-  width: 300px; max-width: 100%; border-radius: 40px; padding: 10px; background: #0E120A;
-  box-shadow: 0 24px 60px rgba(35,42,22,.25);
+  width: 300px; max-width: 100%; border-radius: 40px; padding: 10px; background: #08100D;
+  box-shadow: 0 24px 60px rgba(22,36,30,.25);
 }
 .screen {
   border-radius: 32px; overflow: hidden; height: 640px; background: var(--m-bg); color: var(--m-text);
   display: flex; flex-direction: column; padding: 18px 16px 16px; gap: 14px; font-size: 14px;
 }
-.m-light { --m-bg:#F5EFE3; --m-surface:#FBF8F1; --m-border:#E3D9C3; --m-text:#232A16; --m-text2:#5C6350; --m-primary:#5E7230; --m-on:#FFFFFF; --m-soft:#E6ECD3; --m-honey:#D9A441; }
-.m-dark  { --m-bg:#151A0F; --m-surface:#1F2615; --m-border:#2E3722; --m-text:#F1EBDD; --m-text2:#B5B8A6; --m-primary:#A9C36A; --m-on:#151A0F; --m-soft:#2A3419; --m-honey:#E6B85A; }
+.m-light { --m-bg:#F5EFE3; --m-surface:#FBF8F1; --m-border:#E3D9C3; --m-text:#16241E; --m-text2:#4F5E57; --m-primary:#1F4D3A; --m-on:#FFFFFF; --m-soft:#E3EDE6; --m-honey:#D9A441; }
+.m-dark  { --m-bg:#0E1714; --m-surface:#16231E; --m-border:#24352E; --m-text:#F1EBDD; --m-text2:#B3BDB6; --m-primary:#8FC2A5; --m-on:#0E1714; --m-soft:#1C3329; --m-honey:#E6B85A; }
 .statusbar { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; direction: ltr; color: var(--m-text); }
 .m-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .m-x { width: 32px; height: 32px; border-radius: 999px; display: grid; place-items: center; background: var(--m-surface); border: 1px solid var(--m-border); color: var(--m-text2); font-weight: 700; }
@@ -206,7 +206,7 @@ section { display: flex; flex-direction: column; gap: 24px; }
 .m-hello { display: flex; flex-direction: column; gap: 2px; }
 .m-hello b { font-size: 20px; }
 .m-hello span { color: var(--m-text2); font-size: 13px; }
-.m-streak { background: var(--m-honey); color: #232A16; border-radius: 20px; padding: 14px; display: flex; align-items: center; justify-content: space-between; }
+.m-streak { background: var(--m-honey); color: #16241E; border-radius: 20px; padding: 14px; display: flex; align-items: center; justify-content: space-between; }
 .m-streak b { font-size: 26px; font-weight: 800; line-height: 1; }
 .m-streak span { font-size: 13px; font-weight: 700; }
 .m-card { background: var(--m-surface); border: 1px solid var(--m-border); border-radius: 20px; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
@@ -242,24 +242,24 @@ footer { color: var(--text-2); font-size: 13px; border-top: 1px solid var(--bord
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="mark" viewBox="0 0 120 120">
-      <rect width="120" height="120" rx="27" fill="#5E7230"/>
+      <rect width="120" height="120" rx="27" fill="#1F4D3A"/>
       <rect x="46" y="36" width="20" height="60" rx="10" fill="#F5EFE3"/>
       <rect x="26" y="56" width="60" height="20" rx="10" fill="#F5EFE3"/>
       <path d="M62 42 C 63 27 77 18 97 19 C 96 36 82 45 62 42 Z" fill="#D9A441"/>
-      <path d="M65 40 L 88 26" stroke="#5E7230" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      <path d="M65 40 L 88 26" stroke="#1F4D3A" stroke-width="2.6" stroke-linecap="round" fill="none"/>
     </symbol>
     <symbol id="mark-mono-light" viewBox="0 0 120 120">
       <rect x="46" y="36" width="20" height="60" rx="10" fill="#FBF8F1"/>
       <rect x="26" y="56" width="60" height="20" rx="10" fill="#FBF8F1"/>
       <path d="M62 42 C 63 27 77 18 97 19 C 96 36 82 45 62 42 Z" fill="#D9A441"/>
-      <path d="M65 40 L 88 26" stroke="#5E7230" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      <path d="M65 40 L 88 26" stroke="#1F4D3A" stroke-width="2.6" stroke-linecap="round" fill="none"/>
     </symbol>
     <symbol id="mark-dark" viewBox="0 0 120 120">
-      <rect width="120" height="120" rx="27" fill="#A9C36A"/>
-      <rect x="46" y="36" width="20" height="60" rx="10" fill="#151A0F"/>
-      <rect x="26" y="56" width="60" height="20" rx="10" fill="#151A0F"/>
+      <rect width="120" height="120" rx="27" fill="#8FC2A5"/>
+      <rect x="46" y="36" width="20" height="60" rx="10" fill="#0E1714"/>
+      <rect x="26" y="56" width="60" height="20" rx="10" fill="#0E1714"/>
       <path d="M62 42 C 63 27 77 18 97 19 C 96 36 82 45 62 42 Z" fill="#E6B85A"/>
-      <path d="M65 40 L 88 26" stroke="#A9C36A" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      <path d="M65 40 L 88 26" stroke="#8FC2A5" stroke-width="2.6" stroke-linecap="round" fill="none"/>
     </symbol>
   </defs>
 </svg>
@@ -351,9 +351,9 @@ footer { color: var(--text-2); font-size: 13px; border-top: 1px solid var(--bord
 
     <span class="group-title">نسبة الاستخدام 60 / 30 / 10</span>
     <div class="ratio" role="img" aria-label="60 بالمئة بيج، 30 بالمئة زيتي، 10 بالمئة عسلي">
-      <div style="flex:60;background:#F5EFE3;color:#3B4A1E">بيج 60%</div>
-      <div style="flex:30;background:#5E7230;color:#FFFFFF">زيتي 30%</div>
-      <div style="flex:10;background:#D9A441;color:#232A16">10%</div>
+      <div style="flex:60;background:#F5EFE3;color:#12332A">بيج 60%</div>
+      <div style="flex:30;background:#1F4D3A;color:#FFFFFF">زيتي 30%</div>
+      <div style="flex:10;background:#D9A441;color:#16241E">10%</div>
     </div>
 
     <span class="group-title">التباين (معيار WCAG AA للنص العادي 4.5:1)</span>
@@ -361,10 +361,10 @@ footer { color: var(--text-2); font-size: 13px; border-top: 1px solid var(--bord
       <table class="contrast">
         <thead><tr><th>النص فوق الخلفية</th><th>النسبة</th><th>الحكم</th></tr></thead>
         <tbody>
-          <tr><td><span class="pair" style="background:#5E7230;color:#FFFFFF">أبيض على زيتي</span></td><td class="hex">5.4 : 1</td><td class="ok">مناسب للأزرار</td></tr>
-          <tr><td><span class="pair" style="background:#F5EFE3;color:#232A16">حبر على بيج</span></td><td class="hex">13 : 1</td><td class="ok">مناسب للنصوص</td></tr>
-          <tr><td><span class="pair" style="background:#151A0F;color:#F1EBDD">نص فاتح على داكن</span></td><td class="hex">15 : 1</td><td class="ok">مناسب للنصوص</td></tr>
-          <tr><td><span class="pair" style="background:#D9A441;color:#232A16">حبر على عسلي</span></td><td class="hex">7.5 : 1</td><td class="ok">مناسب</td></tr>
+          <tr><td><span class="pair" style="background:#1F4D3A;color:#FFFFFF">أبيض على زيتي</span></td><td class="hex">9.6 : 1</td><td class="ok">مناسب للأزرار</td></tr>
+          <tr><td><span class="pair" style="background:#F5EFE3;color:#16241E">حبر على بيج</span></td><td class="hex">14 : 1</td><td class="ok">مناسب للنصوص</td></tr>
+          <tr><td><span class="pair" style="background:#0E1714;color:#F1EBDD">نص فاتح على داكن</span></td><td class="hex">15 : 1</td><td class="ok">مناسب للنصوص</td></tr>
+          <tr><td><span class="pair" style="background:#D9A441;color:#16241E">حبر على عسلي</span></td><td class="hex">7.2 : 1</td><td class="ok">مناسب</td></tr>
           <tr><td><span class="pair" style="background:#F5EFE3;color:#D9A441">عسلي على بيج</span></td><td class="hex">2 : 1</td><td class="no">لا تستخدمه للنص</td></tr>
         </tbody>
       </table>
@@ -500,29 +500,29 @@ footer { color: var(--text-2); font-size: 13px; border-top: 1px solid var(--bord
 <script>
 const COLORS = {
   core: [
-    ["زيتي أساسي", "#5E7230", "الأزرار والعناصر النشطة", "#FFFFFF"],
-    ["زيتي غامق", "#3B4A1E", "العناوين والضغط", "#FFFFFF"],
-    ["زيتي فاتح", "#E6ECD3", "خلفيات مميزة وشارات", "#3B4A1E"],
-    ["بيج", "#F5EFE3", "خلفية التطبيق", "#3B4A1E"],
-    ["بيج فاتح", "#FBF8F1", "البطاقات والأسطح", "#3B4A1E"],
-    ["بيج داكن", "#E3D9C3", "الحدود والفواصل", "#3B4A1E"],
-    ["حبر", "#232A16", "النص الأساسي", "#F5EFE3"],
-    ["حبر ثانوي", "#5C6350", "النص الثانوي", "#F5EFE3"]
+    ["أخضر زيتي أساسي", "#1F4D3A", "الأزرار والعناصر النشطة", "#FFFFFF"],
+    ["أخضر زيتي غامق", "#12332A", "العناوين والضغط", "#FFFFFF"],
+    ["أخضر فاتح", "#E3EDE6", "خلفيات مميزة وشارات", "#12332A"],
+    ["بيج", "#F5EFE3", "خلفية التطبيق", "#12332A"],
+    ["بيج فاتح", "#FBF8F1", "البطاقات والأسطح", "#12332A"],
+    ["بيج داكن", "#E3D9C3", "الحدود والفواصل", "#12332A"],
+    ["حبر", "#16241E", "النص الأساسي", "#F5EFE3"],
+    ["حبر ثانوي", "#4F5E57", "النص الثانوي", "#F5EFE3"]
   ],
   state: [
-    ["عسلي", "#D9A441", "التحفيز والإنجازات والاشتراك", "#232A16"],
+    ["عسلي", "#D9A441", "التحفيز والإنجازات والاشتراك", "#16241E"],
     ["صحيح", "#4C9A5B", "الإجابة الصحيحة", "#FFFFFF"],
     ["خطأ", "#B5472F", "الإجابة الخاطئة", "#FFFFFF"],
-    ["تنبيه", "#C98A1B", "تنبيهات خفيفة", "#232A16"]
+    ["تنبيه", "#C98A1B", "تنبيهات خفيفة", "#16241E"]
   ],
   dark: [
-    ["خلفية", "#151A0F", "خلفية الوضع الداكن", "#F1EBDD"],
-    ["سطح", "#1F2615", "البطاقات", "#F1EBDD"],
-    ["حدود", "#2E3722", "الفواصل", "#F1EBDD"],
-    ["نص", "#F1EBDD", "النص الأساسي", "#151A0F"],
-    ["نص ثانوي", "#B5B8A6", "النص الثانوي", "#151A0F"],
-    ["زيتي فاتح", "#A9C36A", "الأزرار في الداكن", "#151A0F"],
-    ["عسلي", "#E6B85A", "التحفيز في الداكن", "#151A0F"]
+    ["خلفية", "#0E1714", "خلفية الوضع الداكن", "#F1EBDD"],
+    ["سطح", "#16231E", "البطاقات", "#F1EBDD"],
+    ["حدود", "#24352E", "الفواصل", "#F1EBDD"],
+    ["نص", "#F1EBDD", "النص الأساسي", "#0E1714"],
+    ["نص ثانوي", "#B3BDB6", "النص الثانوي", "#0E1714"],
+    ["أخضر فاتح", "#8FC2A5", "الأزرار في الداكن", "#0E1714"],
+    ["عسلي", "#E6B85A", "التحفيز في الداكن", "#0E1714"]
   ]
 };
 
