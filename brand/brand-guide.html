@@ -1,0 +1,552 @@
+<title>هوية تحصيلي+</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: a single RTL column of brand sections, each a titled band; the phone mockups close the page. */
+:root {
+  --bg: #F5EFE3;
+  --surface: #FBF8F1;
+  --border: #E3D9C3;
+  --text: #232A16;
+  --text-2: #5C6350;
+  --primary: #5E7230;
+  --primary-soft: #E6ECD3;
+  --primary-strong: #3B4A1E;
+  --honey: #D9A441;
+  --on-primary: #FFFFFF;
+  --font: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+  --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151A0F; --surface: #1F2615; --border: #2E3722;
+    --text: #F1EBDD; --text-2: #B5B8A6;
+    --primary: #A9C36A; --primary-soft: #2A3419; --primary-strong: #C9DC98;
+    --honey: #E6B85A; --on-primary: #151A0F;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151A0F; --surface: #1F2615; --border: #2E3722;
+  --text: #F1EBDD; --text-2: #B5B8A6;
+  --primary: #A9C36A; --primary-soft: #2A3419; --primary-strong: #C9DC98;
+  --honey: #E6B85A; --on-primary: #151A0F;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { direction: rtl; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.75;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 64px;
+}
+.wrap { max-width: 1040px; margin-inline: auto; display: flex; flex-direction: column; gap: 72px; }
+h1, h2, h3 { margin: 0; line-height: 1.35; text-wrap: balance; }
+h2 { font-size: 26px; font-weight: 800; color: var(--primary-strong); }
+h3 { font-size: 17px; font-weight: 700; }
+p { margin: 0; }
+.lead { color: var(--text-2); max-width: 62ch; }
+section { display: flex; flex-direction: column; gap: 24px; }
+.sec-head { display: flex; flex-direction: column; gap: 6px; }
+.label { font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--text-2); }
+.hex { font-family: var(--mono); font-size: 13px; direction: ltr; unicode-bidi: isolate; }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-block: 56px 8px;
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
+}
+.hero-text { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.hero h1 { font-size: clamp(34px, 6vw, 52px); font-weight: 800; }
+.hero h1 .p { color: var(--honey); }
+.tagline { font-size: 20px; font-weight: 600; color: var(--primary); }
+.hero-icon { display: flex; justify-content: center; }
+.hero-icon svg { width: min(260px, 70vw); height: auto; filter: drop-shadow(0 18px 40px rgba(59,74,30,.22)); }
+
+/* ---------- Logo ---------- */
+.lockup { display: inline-flex; align-items: center; gap: 12px; direction: rtl; }
+.lockup svg { width: 56px; height: 56px; flex: none; }
+.lockup .word { font-size: 40px; font-weight: 800; line-height: 1; letter-spacing: -.01em; }
+.lockup .word .p { color: #D9A441; margin-inline-start: 2px; }
+.logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.logo-tile {
+  border-radius: 20px; padding: 40px 20px 18px; display: flex; flex-direction: column;
+  align-items: center; gap: 28px; border: 1px solid var(--border);
+}
+.logo-tile .cap { font-size: 13px; font-weight: 600; align-self: stretch; text-align: center; }
+.t-beige { background: #F5EFE3; color: #3B4A1E; }
+.t-beige .cap { color: #5C6350; }
+.t-olive { background: #5E7230; color: #FBF8F1; border-color: #5E7230; }
+.t-olive .cap { color: #E6ECD3; }
+.t-dark { background: #151A0F; color: #F1EBDD; border-color: #2E3722; }
+.t-dark .cap { color: #B5B8A6; }
+
+.icon-sizes { display: flex; align-items: flex-end; gap: 28px; flex-wrap: wrap; }
+.icon-sizes figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.icon-sizes figcaption { font-size: 12px; color: var(--text-2); }
+
+.rules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.rule-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.rule-card ul { margin: 0; padding-inline-start: 20px; color: var(--text-2); display: flex; flex-direction: column; gap: 4px; }
+.clearspace { display: flex; justify-content: center; padding: 8px; }
+.clearspace-box { position: relative; padding: 22px; border: 1.5px dashed var(--primary); border-radius: 12px; }
+.clearspace-box::after {
+  content: "x"; position: absolute; top: 2px; inset-inline-start: 6px; font-size: 12px; font-weight: 700; color: var(--primary);
+}
+
+/* ---------- Colors ---------- */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+.swatch {
+  border-radius: 18px; overflow: hidden; border: 1px solid var(--border); background: var(--surface);
+  display: flex; flex-direction: column; text-align: start; font: inherit; color: inherit; padding: 0; cursor: pointer;
+}
+.swatch:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+.chip-color { height: 96px; display: flex; align-items: flex-end; padding: 10px 12px; font-size: 12px; font-weight: 700; }
+.swatch .meta { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 2px; }
+.swatch .name { font-weight: 700; font-size: 14px; }
+.swatch .role { font-size: 12px; color: var(--text-2); line-height: 1.5; }
+.swatch .hex { color: var(--text-2); }
+.copied { color: var(--primary) !important; font-weight: 700; }
+.group-title { font-size: 15px; font-weight: 700; color: var(--text-2); }
+
+.ratio { display: flex; height: 56px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+.ratio div { display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; }
+
+.contrast { width: 100%; border-collapse: collapse; font-size: 14px; }
+.contrast th, .contrast td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: start; }
+.contrast th { font-size: 12px; color: var(--text-2); font-weight: 700; }
+.pair { display: inline-flex; padding: 2px 12px; border-radius: 8px; font-weight: 700; }
+.ok { color: #4C9A5B; font-weight: 700; }
+.no { color: #B5472F; font-weight: 700; }
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; }
+
+/* ---------- Type ---------- */
+.type-list { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+.type-row { display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: baseline; padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.type-row:last-child { border-bottom: 0; }
+.type-row .spec { font-size: 12px; color: var(--text-2); line-height: 1.5; }
+.type-row .spec b { color: var(--text); display: block; font-size: 13px; }
+.type-row .sample { min-width: 0; overflow-wrap: anywhere; }
+
+/* ---------- Components ---------- */
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.comp { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.btn { font: inherit; font-weight: 700; font-size: 16px; height: 52px; border-radius: 14px; border: 0; width: 100%; cursor: pointer; }
+.btn-primary { background: var(--primary); color: var(--on-primary); }
+.btn-secondary { background: var(--primary-soft); color: var(--primary-strong); }
+.btn-honey { background: #D9A441; color: #232A16; }
+.btn-text { background: transparent; color: var(--primary); height: 40px; }
+.btn:focus-visible { outline: 3px solid var(--honey); outline-offset: 2px; }
+
+.opt { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; border: 1.5px solid var(--border); background: var(--bg); font-weight: 600; }
+.opt .k { width: 30px; height: 30px; border-radius: 999px; display: grid; place-items: center; font-size: 13px; font-weight: 800; background: var(--surface); border: 1px solid var(--border); flex: none; }
+.opt .st { margin-inline-start: auto; font-size: 13px; font-weight: 700; }
+.opt.sel { border: 2px solid var(--primary); background: var(--primary-soft); }
+.opt.right { border: 2px solid #4C9A5B; }
+.opt.right .k { background: #4C9A5B; color: #fff; border-color: #4C9A5B; }
+.opt.right .st { color: #4C9A5B; }
+.opt.wrong { border: 2px solid #B5472F; }
+.opt.wrong .k { background: #B5472F; color: #fff; border-color: #B5472F; }
+.opt.wrong .st { color: #B5472F; }
+
+.bar { height: 10px; border-radius: 999px; background: var(--border); overflow: hidden; }
+.bar > i { display: block; height: 100%; border-radius: 999px; background: var(--primary); }
+.bar.done > i { background: var(--honey); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; background: var(--primary-soft); color: var(--primary-strong); }
+.chip.on { background: var(--primary); color: var(--on-primary); }
+.chip.plus { background: #D9A441; color: #232A16; }
+
+/* ---------- Voice ---------- */
+.voice { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+.voice-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+.voice-card .yes { font-weight: 700; font-size: 17px; color: var(--primary); }
+.voice-card .not { font-size: 14px; color: var(--text-2); text-decoration: line-through; text-decoration-color: #B5472F; }
+
+/* ---------- Phones ---------- */
+.phones { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+.phone-col { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.phone {
+  width: 300px; max-width: 100%; border-radius: 40px; padding: 10px; background: #0E120A;
+  box-shadow: 0 24px 60px rgba(35,42,22,.25);
+}
+.screen {
+  border-radius: 32px; overflow: hidden; height: 640px; background: var(--m-bg); color: var(--m-text);
+  display: flex; flex-direction: column; padding: 18px 16px 16px; gap: 14px; font-size: 14px;
+}
+.m-light { --m-bg:#F5EFE3; --m-surface:#FBF8F1; --m-border:#E3D9C3; --m-text:#232A16; --m-text2:#5C6350; --m-primary:#5E7230; --m-on:#FFFFFF; --m-soft:#E6ECD3; --m-honey:#D9A441; }
+.m-dark  { --m-bg:#151A0F; --m-surface:#1F2615; --m-border:#2E3722; --m-text:#F1EBDD; --m-text2:#B5B8A6; --m-primary:#A9C36A; --m-on:#151A0F; --m-soft:#2A3419; --m-honey:#E6B85A; }
+.statusbar { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; direction: ltr; color: var(--m-text); }
+.m-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.m-x { width: 32px; height: 32px; border-radius: 999px; display: grid; place-items: center; background: var(--m-surface); border: 1px solid var(--m-border); color: var(--m-text2); font-weight: 700; }
+.m-prog { flex: 1; height: 8px; border-radius: 999px; background: var(--m-border); overflow: hidden; }
+.m-prog i { display: block; height: 100%; width: 30%; background: var(--m-primary); border-radius: 999px; }
+.m-count { font-size: 12px; font-weight: 700; color: var(--m-text2); }
+.m-tag { font-size: 12px; font-weight: 700; color: var(--m-primary); }
+.m-q { font-size: 17px; font-weight: 700; line-height: 1.6; }
+.m-opts { display: flex; flex-direction: column; gap: 8px; }
+.m-opt { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px; border: 1.5px solid var(--m-border); background: var(--m-surface); font-weight: 600; }
+.m-opt .k { width: 26px; height: 26px; border-radius: 999px; display: grid; place-items: center; font-size: 12px; font-weight: 800; border: 1px solid var(--m-border); }
+.m-opt.right { border: 2px solid #4C9A5B; }
+.m-opt.right .k { background: #4C9A5B; color: #fff; border-color: #4C9A5B; }
+.m-opt.wrong { border: 2px solid #B5472F; }
+.m-opt.wrong .k { background: #B5472F; color: #fff; border-color: #B5472F; }
+.m-feedback { margin-top: auto; background: var(--m-soft); border-radius: 18px; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+.m-feedback b { color: var(--m-primary); font-size: 15px; }
+.m-feedback span { color: var(--m-text2); font-size: 13px; line-height: 1.6; }
+.m-btn { height: 46px; border-radius: 14px; background: var(--m-primary); color: var(--m-on); display: grid; place-items: center; font-weight: 700; }
+.m-hello { display: flex; flex-direction: column; gap: 2px; }
+.m-hello b { font-size: 20px; }
+.m-hello span { color: var(--m-text2); font-size: 13px; }
+.m-streak { background: var(--m-honey); color: #232A16; border-radius: 20px; padding: 14px; display: flex; align-items: center; justify-content: space-between; }
+.m-streak b { font-size: 26px; font-weight: 800; line-height: 1; }
+.m-streak span { font-size: 13px; font-weight: 700; }
+.m-card { background: var(--m-surface); border: 1px solid var(--m-border); border-radius: 20px; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.m-card .row { display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+.m-card small { color: var(--m-text2); font-size: 12px; font-weight: 600; }
+.m-card .m-prog { flex: none; }
+.m-card .m-prog i { width: 60%; }
+.m-subjects { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.m-sub { background: var(--m-surface); border: 1px solid var(--m-border); border-radius: 16px; padding: 12px; font-weight: 700; display: flex; flex-direction: column; gap: 4px; }
+.m-sub small { color: var(--m-text2); font-size: 11px; font-weight: 600; }
+.m-nav { margin-top: auto; display: flex; justify-content: space-around; padding-top: 10px; border-top: 1px solid var(--m-border); font-size: 11px; font-weight: 700; color: var(--m-text2); }
+.m-nav .on { color: var(--m-primary); }
+.phone-cap { font-size: 13px; font-weight: 700; color: var(--text-2); }
+
+footer { color: var(--text-2); font-size: 13px; border-top: 1px solid var(--border); padding-top: 20px; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-block: 36px 0; gap: 24px; }
+  .hero-icon { order: -1; justify-content: flex-start; }
+  .hero-icon svg { width: 140px; }
+  .logo-grid, .rules, .comp-grid { grid-template-columns: 1fr; }
+  .type-row { grid-template-columns: 1fr; gap: 4px; }
+  .lockup .word { font-size: 34px; }
+  .wrap { gap: 56px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .swatch { transition: transform .15s ease-out; }
+  .swatch:hover { transform: translateY(-2px); }
+}
+</style>
+
+<!-- Reusable logo mark -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="0 0 120 120">
+      <rect width="120" height="120" rx="27" fill="#5E7230"/>
+      <rect x="46" y="36" width="20" height="60" rx="10" fill="#F5EFE3"/>
+      <rect x="26" y="56" width="60" height="20" rx="10" fill="#F5EFE3"/>
+      <path d="M62 42 C 63 27 77 18 97 19 C 96 36 82 45 62 42 Z" fill="#D9A441"/>
+      <path d="M65 40 L 88 26" stroke="#5E7230" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="mark-mono-light" viewBox="0 0 120 120">
+      <rect x="46" y="36" width="20" height="60" rx="10" fill="#FBF8F1"/>
+      <rect x="26" y="56" width="60" height="20" rx="10" fill="#FBF8F1"/>
+      <path d="M62 42 C 63 27 77 18 97 19 C 96 36 82 45 62 42 Z" fill="#D9A441"/>
+      <path d="M65 40 L 88 26" stroke="#5E7230" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="mark-dark" viewBox="0 0 120 120">
+      <rect width="120" height="120" rx="27" fill="#A9C36A"/>
+      <rect x="46" y="36" width="20" height="60" rx="10" fill="#151A0F"/>
+      <rect x="26" y="56" width="60" height="20" rx="10" fill="#151A0F"/>
+      <path d="M62 42 C 63 27 77 18 97 19 C 96 36 82 45 62 42 Z" fill="#E6B85A"/>
+      <path d="M65 40 L 88 26" stroke="#A9C36A" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <span class="label">دليل الهوية البصرية · النسخة 1.0</span>
+      <h1>تحصيلي<span class="p">+</span></h1>
+      <p class="tagline">خطوة بخطوة لدرجتك</p>
+      <p class="lead">تطبيق جوال لطلاب وطالبات اختبار التحصيلي: اختبارات وتدريب على حسب الدروس، باشتراك. الهوية ودودة ومحفّزة، بألوان زيتي وبيج تعطي هدوء وتركيز وتخفف توتر الاختبار.</p>
+    </div>
+    <div class="hero-icon">
+      <svg viewBox="0 0 120 120" role="img" aria-label="أيقونة تحصيلي+"><use href="#mark"/></svg>
+    </div>
+  </header>
+
+  <!-- LOGO -->
+  <section id="logo">
+    <div class="sec-head">
+      <h2>الشعار</h2>
+      <p class="lead">علامة «+» تخرج منها ورقة زيتون عسلية. الـ«+» تعني زيادة الدرجة وتشير للاشتراك، والورقة تعني النمو خطوة بخطوة.</p>
+    </div>
+
+    <div class="logo-grid">
+      <div class="logo-tile t-beige">
+        <div class="lockup">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#mark"/></svg>
+          <span class="word">تحصيلي<span class="p">+</span></span>
+        </div>
+        <span class="cap">الأساسي · على البيج</span>
+      </div>
+      <div class="logo-tile t-olive">
+        <div class="lockup">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#mark-mono-light"/></svg>
+          <span class="word">تحصيلي<span class="p">+</span></span>
+        </div>
+        <span class="cap">على الزيتي</span>
+      </div>
+      <div class="logo-tile t-dark">
+        <div class="lockup">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#mark-dark"/></svg>
+          <span class="word">تحصيلي<span class="p" style="color:#E6B85A">+</span></span>
+        </div>
+        <span class="cap">الوضع الداكن</span>
+      </div>
+    </div>
+
+    <div class="rules">
+      <div class="rule-card">
+        <h3>أيقونة التطبيق بالمقاسات</h3>
+        <div class="icon-sizes">
+          <figure><svg width="96" height="96" viewBox="0 0 120 120" aria-hidden="true"><use href="#mark"/></svg><figcaption>المتجر</figcaption></figure>
+          <figure><svg width="60" height="60" viewBox="0 0 120 120" aria-hidden="true"><use href="#mark"/></svg><figcaption>الشاشة الرئيسية</figcaption></figure>
+          <figure><svg width="40" height="40" viewBox="0 0 120 120" aria-hidden="true"><use href="#mark"/></svg><figcaption>الإعدادات</figcaption></figure>
+          <figure><svg width="24" height="24" viewBox="0 0 120 120" aria-hidden="true"><use href="#mark"/></svg><figcaption>أصغر حجم</figcaption></figure>
+        </div>
+      </div>
+      <div class="rule-card">
+        <h3>المساحة الآمنة وقواعد الاستخدام</h3>
+        <div class="clearspace">
+          <div class="clearspace-box"><div class="lockup"><svg viewBox="0 0 120 120" style="width:40px;height:40px" aria-hidden="true"><use href="#mark"/></svg><span class="word" style="font-size:28px;color:var(--primary-strong)">تحصيلي<span class="p">+</span></span></div></div>
+        </div>
+        <ul>
+          <li>المساحة حول الشعار = عرض علامة «+» (x) من كل جهة.</li>
+          <li>لا تمدّ الشعار، ولا تغيّر ألوانه، ولا تضيف له ظل.</li>
+          <li>أقل عرض للشعار الأفقي 96px، وللأيقونة 24px.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLORS -->
+  <section id="colors">
+    <div class="sec-head">
+      <h2>الألوان</h2>
+      <p class="lead">اضغط على أي لون لنسخ كوده.</p>
+    </div>
+
+    <span class="group-title">الأساسية</span>
+    <div class="swatches" data-group="core"></div>
+
+    <span class="group-title">التمييز والحالات</span>
+    <div class="swatches" data-group="state"></div>
+
+    <span class="group-title">الوضع الداكن</span>
+    <div class="swatches" data-group="dark"></div>
+
+    <span class="group-title">نسبة الاستخدام 60 / 30 / 10</span>
+    <div class="ratio" role="img" aria-label="60 بالمئة بيج، 30 بالمئة زيتي، 10 بالمئة عسلي">
+      <div style="flex:60;background:#F5EFE3;color:#3B4A1E">بيج 60%</div>
+      <div style="flex:30;background:#5E7230;color:#FFFFFF">زيتي 30%</div>
+      <div style="flex:10;background:#D9A441;color:#232A16">10%</div>
+    </div>
+
+    <span class="group-title">التباين (معيار WCAG AA للنص العادي 4.5:1)</span>
+    <div class="table-wrap">
+      <table class="contrast">
+        <thead><tr><th>النص فوق الخلفية</th><th>النسبة</th><th>الحكم</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pair" style="background:#5E7230;color:#FFFFFF">أبيض على زيتي</span></td><td class="hex">5.4 : 1</td><td class="ok">مناسب للأزرار</td></tr>
+          <tr><td><span class="pair" style="background:#F5EFE3;color:#232A16">حبر على بيج</span></td><td class="hex">13 : 1</td><td class="ok">مناسب للنصوص</td></tr>
+          <tr><td><span class="pair" style="background:#151A0F;color:#F1EBDD">نص فاتح على داكن</span></td><td class="hex">15 : 1</td><td class="ok">مناسب للنصوص</td></tr>
+          <tr><td><span class="pair" style="background:#D9A441;color:#232A16">حبر على عسلي</span></td><td class="hex">7.5 : 1</td><td class="ok">مناسب</td></tr>
+          <tr><td><span class="pair" style="background:#F5EFE3;color:#D9A441">عسلي على بيج</span></td><td class="hex">2 : 1</td><td class="no">لا تستخدمه للنص</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TYPE -->
+  <section id="type">
+    <div class="sec-head">
+      <h2>الخطوط</h2>
+      <p class="lead">خط Cairo لكل التطبيق، والأرقام غربية (0-9) لأنها أوضح في الأسئلة والنتائج.</p>
+    </div>
+    <div class="type-list">
+      <div class="type-row"><div class="spec"><b>Display</b>32 / 44 · 800</div><div class="sample" style="font-size:32px;font-weight:800;line-height:1.4">درجتك 92%</div></div>
+      <div class="type-row"><div class="spec"><b>H1</b>24 / 34 · 700</div><div class="sample" style="font-size:24px;font-weight:700">اختبار الكيمياء</div></div>
+      <div class="type-row"><div class="spec"><b>H2</b>20 / 30 · 700</div><div class="sample" style="font-size:20px;font-weight:700">الدروس المقترحة لك</div></div>
+      <div class="type-row"><div class="spec"><b>H3</b>17 / 26 · 600</div><div class="sample" style="font-size:17px;font-weight:600">قوانين نيوتن للحركة</div></div>
+      <div class="type-row"><div class="spec"><b>Body</b>16 / 28 · 400</div><div class="sample" style="font-size:16px;line-height:1.75">جسم كتلته 4 كجم يتحرك بتسارع 3 م/ث². ما مقدار القوة المؤثرة عليه؟</div></div>
+      <div class="type-row"><div class="spec"><b>Caption</b>13 / 20 · 500</div><div class="sample" style="font-size:13px;font-weight:500;color:var(--text-2)">السؤال 6 من 20 · الفيزياء</div></div>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section id="components">
+    <div class="sec-head">
+      <h2>المكونات</h2>
+      <p class="lead">زوايا الأزرار 14px، والبطاقات 20px، والشارات كبسولة.</p>
+    </div>
+    <div class="comp-grid">
+      <div class="comp">
+        <h3>الأزرار</h3>
+        <button class="btn btn-primary" type="button">ابدأ التدريب</button>
+        <button class="btn btn-secondary" type="button">راجع أخطائي</button>
+        <button class="btn btn-honey" type="button">افتح كل الدروس مع بلس</button>
+        <button class="btn btn-text" type="button">تخطّي الآن</button>
+      </div>
+      <div class="comp">
+        <h3>خيارات الإجابة</h3>
+        <div class="opt"><span class="k">أ</span>2</div>
+        <div class="opt sel"><span class="k">ب</span>3<span class="st">محدد</span></div>
+        <div class="opt right"><span class="k">✓</span>4<span class="st">صحيح</span></div>
+        <div class="opt wrong"><span class="k">✕</span>5<span class="st">خطأ</span></div>
+      </div>
+      <div class="comp">
+        <h3>التقدم</h3>
+        <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700"><span>الجبر</span><span class="hex">60%</span></div>
+        <div class="bar"><i style="width:60%"></i></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700"><span>الهندسة · مكتمل</span><span class="hex">100%</span></div>
+        <div class="bar done"><i style="width:100%"></i></div>
+      </div>
+      <div class="comp">
+        <h3>الشارات</h3>
+        <div class="chips">
+          <span class="chip on">الكل</span>
+          <span class="chip">رياضيات</span>
+          <span class="chip">فيزياء</span>
+          <span class="chip">كيمياء</span>
+          <span class="chip">أحياء</span>
+          <span class="chip plus">بلس ✦</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICE -->
+  <section id="voice">
+    <div class="sec-head">
+      <h2>نبرة الكلام</h2>
+      <p class="lead">مدرّب لطيف يؤمن بالطالب: نشجع ولا نضغط، ونصحح ولا نوبّخ.</p>
+    </div>
+    <div class="voice">
+      <div class="voice-card"><span class="label">إجابة صحيحة</span><span class="yes">أحسنت! استمر</span><span class="not">صح</span></div>
+      <div class="voice-card"><span class="label">إجابة خاطئة</span><span class="yes">قريب! خلنا نراجع الفكرة</span><span class="not">إجابتك خاطئة</span></div>
+      <div class="voice-card"><span class="label">بداية جلسة</span><span class="yes">جاهز نكمل من وين وقفت؟</span><span class="not">ابدأ الاختبار</span></div>
+      <div class="voice-card"><span class="label">الاشتراك</span><span class="yes">افتح كل الدروس وأسئلة التحصيلي</span><span class="not">اشترك الحين!</span></div>
+    </div>
+  </section>
+
+  <!-- MOCKUPS -->
+  <section id="screens">
+    <div class="sec-head">
+      <h2>الهوية داخل التطبيق</h2>
+      <p class="lead">شاشتان تجريبيتان توضحان طريقة استخدام الألوان والمكونات مع بعض.</p>
+    </div>
+    <div class="phones">
+      <div class="phone-col">
+        <div class="phone"><div class="screen m-light">
+          <div class="statusbar"><span>9:41</span><span>●●● ▮</span></div>
+          <div class="m-top"><span class="m-x">✕</span><div class="m-prog"><i></i></div><span class="m-count hex">6/20</span></div>
+          <span class="m-tag">الرياضيات · المعادلات</span>
+          <div class="m-q">إذا كان 2س + 6 = 14، فما قيمة س؟</div>
+          <div class="m-opts">
+            <div class="m-opt"><span class="k">أ</span>2</div>
+            <div class="m-opt wrong"><span class="k">✕</span>3</div>
+            <div class="m-opt right"><span class="k">✓</span>4</div>
+            <div class="m-opt"><span class="k">د</span>8</div>
+          </div>
+          <div class="m-feedback">
+            <b>قريب! خلنا نراجع الفكرة</b>
+            <span>اطرح 6 من الطرفين: 2س = 8، ثم اقسم على 2، فتكون س = 4.</span>
+            <div class="m-btn">التالي</div>
+          </div>
+        </div></div>
+        <span class="phone-cap">شاشة سؤال · وضع فاتح</span>
+      </div>
+
+      <div class="phone-col">
+        <div class="phone"><div class="screen m-dark">
+          <div class="statusbar"><span>9:41</span><span>●●● ▮</span></div>
+          <div class="m-hello"><b>هلا فيك</b><span>جاهز نكمل من وين وقفت؟</span></div>
+          <div class="m-streak"><div><b class="hex">7</b></div><span>أيام متتالية، كمّل!</span></div>
+          <div class="m-card">
+            <div class="row"><span>الكيمياء · المول</span><small class="hex">60%</small></div>
+            <div class="m-prog"><i></i></div>
+            <div class="m-btn">أكمل الدرس</div>
+          </div>
+          <div class="m-subjects">
+            <div class="m-sub">رياضيات<small>12 درس</small></div>
+            <div class="m-sub">فيزياء<small>10 دروس</small></div>
+            <div class="m-sub">كيمياء<small>9 دروس</small></div>
+            <div class="m-sub">أحياء<small>11 درس</small></div>
+          </div>
+          <div class="m-nav"><span class="on">الرئيسية</span><span>الدروس</span><span>اختبارات</span><span>تقدمي</span></div>
+        </div></div>
+        <span class="phone-cap">الرئيسية · وضع داكن</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>ملفات الشعار SVG ومتغيرات CSS موجودة في مجلد <span class="hex">brand/</span> في المشروع، والتفاصيل النصية في <span class="hex">BRAND.md</span>.</footer>
+</div>
+
+<script>
+const COLORS = {
+  core: [
+    ["زيتي أساسي", "#5E7230", "الأزرار والعناصر النشطة", "#FFFFFF"],
+    ["زيتي غامق", "#3B4A1E", "العناوين والضغط", "#FFFFFF"],
+    ["زيتي فاتح", "#E6ECD3", "خلفيات مميزة وشارات", "#3B4A1E"],
+    ["بيج", "#F5EFE3", "خلفية التطبيق", "#3B4A1E"],
+    ["بيج فاتح", "#FBF8F1", "البطاقات والأسطح", "#3B4A1E"],
+    ["بيج داكن", "#E3D9C3", "الحدود والفواصل", "#3B4A1E"],
+    ["حبر", "#232A16", "النص الأساسي", "#F5EFE3"],
+    ["حبر ثانوي", "#5C6350", "النص الثانوي", "#F5EFE3"]
+  ],
+  state: [
+    ["عسلي", "#D9A441", "التحفيز والإنجازات والاشتراك", "#232A16"],
+    ["صحيح", "#4C9A5B", "الإجابة الصحيحة", "#FFFFFF"],
+    ["خطأ", "#B5472F", "الإجابة الخاطئة", "#FFFFFF"],
+    ["تنبيه", "#C98A1B", "تنبيهات خفيفة", "#232A16"]
+  ],
+  dark: [
+    ["خلفية", "#151A0F", "خلفية الوضع الداكن", "#F1EBDD"],
+    ["سطح", "#1F2615", "البطاقات", "#F1EBDD"],
+    ["حدود", "#2E3722", "الفواصل", "#F1EBDD"],
+    ["نص", "#F1EBDD", "النص الأساسي", "#151A0F"],
+    ["نص ثانوي", "#B5B8A6", "النص الثانوي", "#151A0F"],
+    ["زيتي فاتح", "#A9C36A", "الأزرار في الداكن", "#151A0F"],
+    ["عسلي", "#E6B85A", "التحفيز في الداكن", "#151A0F"]
+  ]
+};
+
+document.querySelectorAll(".swatches").forEach(box => {
+  COLORS[box.dataset.group].forEach(([name, hex, role, fg]) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "swatch";
+    b.setAttribute("aria-label", `${name} ${hex}، اضغط للنسخ`);
+    b.innerHTML = `<div class="chip-color" style="background:${hex};color:${fg}">Aa</div>
+      <div class="meta"><span class="name">${name}</span><span class="hex">${hex}</span><span class="role">${role}</span></div>`;
+    b.addEventListener("click", () => {
+      const tag = b.querySelector(".hex");
+      const done = () => { tag.textContent = "تم النسخ"; tag.classList.add("copied");
+        setTimeout(() => { tag.textContent = hex; tag.classList.remove("copied"); }, 1200); };
+      try {
+        navigator.clipboard.writeText(hex).then(done).catch(() => selectText(tag));
+      } catch (e) { selectText(tag); }
+    });
+    box.appendChild(b);
+  });
+});
+function selectText(el) {
+  const r = document.createRange(); r.selectNodeContents(el);
+  const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+}
+</script>

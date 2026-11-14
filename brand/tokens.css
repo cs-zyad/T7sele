@@ -1,0 +1,46 @@
+/* تحصيلي+ — design tokens */
+:root {
+  --olive-100: #E6ECD3;
+  --olive-600: #5E7230;
+  --olive-800: #3B4A1E;
+  --beige-50:  #FBF8F1;
+  --beige-100: #F5EFE3;
+  --beige-300: #E3D9C3;
+  --ink-900: #232A16;
+  --ink-600: #5C6350;
+  --honey-500: #D9A441;
+  --success: #4C9A5B;
+  --error:   #B5472F;
+  --warning: #C98A1B;
+
+  --bg:         var(--beige-100);
+  --surface:    var(--beige-50);
+  --border:     var(--beige-300);
+  --text:       var(--ink-900);
+  --text-2:     var(--ink-600);
+  --primary:    var(--olive-600);
+  --primary-soft: var(--olive-100);
+  --on-primary: #FFFFFF;
+  --accent:     var(--honey-500);
+
+  --radius-btn: 14px;
+  --radius-card: 20px;
+  --radius-sheet: 28px;
+  --shadow-card: 0 4px 16px rgba(59, 74, 30, .08);
+  --font: 'Cairo', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:         #151A0F;
+    --surface:    #1F2615;
+    --border:     #2E3722;
+    --text:       #F1EBDD;
+    --text-2:     #B5B8A6;
+    --primary:    #A9C36A;
+    --primary-soft: #2A3419;
+    --on-primary: #151A0F;
+    --accent:     #E6B85A;
+    --shadow-card: none;
+  }
+}
