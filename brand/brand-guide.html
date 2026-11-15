@@ -17,23 +17,8 @@
   --honey: #D9A441;
   --on-primary: #FFFFFF;
   --font: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+  color-scheme: light;
   --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0E1714; --surface: #16231E; --border: #24352E;
-    --text: #F1EBDD; --text-2: #B3BDB6;
-    --primary: #8FC2A5; --primary-soft: #1C3329; --primary-strong: #B5DCC5;
-    --honey: #E6B85A; --on-primary: #0E1714;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0E1714; --surface: #16231E; --border: #24352E;
-  --text: #F1EBDD; --text-2: #B3BDB6;
-  --primary: #8FC2A5; --primary-soft: #1C3329; --primary-strong: #B5DCC5;
-  --honey: #E6B85A; --on-primary: #0E1714;
-  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
